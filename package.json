@@ -4,18 +4,26 @@
   "version": "0.0.0",
   "author": "Alejandro Duran <aledurax@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
+    "gatsby-plugin-emotion": "^4.1.21",
+    "gatsby-plugin-favicon": "^3.1.6",
+    "gatsby-plugin-google-analytics": "^2.1.34",
     "gatsby-plugin-manifest": "^2.2.31",
-    "gatsby-plugin-offline": "^3.0.27",
-    "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-nprogress": "^2.1.18",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet-async": "^1.0.14",
     "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-plugin-sitemap": "^2.2.26",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet-async": "^1.0.4"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
