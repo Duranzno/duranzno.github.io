@@ -1,8 +1,6 @@
-import colors from '../data/colors';
-const {
-  theme_color: primary,
-  background_color: background,
-} = colors;
+import colors from '../data/colors'
+
+const { theme_color: primary } = colors
 const heading = {
   color: 'text',
   fontFamily: 'heading',
@@ -31,7 +29,7 @@ export default {
     background: '#f6f6f6',
     primary,
     secondary: '#306',
-  },  
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -98,5 +96,5 @@ export default {
     img: {
       maxWidth: '100%',
     },
-  }
-};
+  },
+}

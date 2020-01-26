@@ -17,8 +17,10 @@ module.exports={
   },
   "rules": {
     "no-console": 2,
+    'react/jsx-filename-extension':'off',
     "import/no-unresolved": 0,
     "react/display-name": 0,
+    "import/prefer-default-export":"off",
     "prettier/prettier": [
       "error",
       {
