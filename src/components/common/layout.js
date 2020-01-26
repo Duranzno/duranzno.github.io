@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { HelmetProvider } from 'react-helmet-async'
 import { useStaticQuery, graphql } from 'gatsby'
-import Header from '../header'
+import { Header } from '../header'
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -14,7 +14,6 @@ export const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
     <HelmetProvider>
       <Header siteTitle={data.site.siteMetadata.title} />

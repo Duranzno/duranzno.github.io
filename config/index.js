@@ -1,7 +1,7 @@
 /* eslint-disable */
 const colors=require('../src/data/colors');
 const  siteMetadata= {
-  title: '',
+  title: 'hey',
   description: '',
   author: '',
   siteUrl: `https://www.example.com`,
