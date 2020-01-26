@@ -1,3 +1,4 @@
+/* eslint-disable */
 const colors=require('../src/data/colors');
 const  siteMetadata= {
   title: '',

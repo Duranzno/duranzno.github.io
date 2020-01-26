@@ -18,6 +18,8 @@
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-sitemap": "^2.2.26",
     "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-source-contentful": "^2.1.79",
+    "gatsby-source-dev": "^0.1.4",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.7",
     "prop-types": "^15.7.2",
@@ -28,6 +30,9 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1"
   },
   "keywords": [

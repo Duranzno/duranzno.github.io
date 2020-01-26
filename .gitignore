@@ -73,3 +73,4 @@ yarn.lock
 
 now.json
 examples/
+.vscode/
