@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
