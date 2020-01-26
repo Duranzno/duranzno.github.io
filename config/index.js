@@ -1,3 +1,4 @@
+const colors=require('../src/data/colors');
 const  siteMetadata= {
   title: '',
   description: '',
@@ -8,9 +9,8 @@ const pluginManifest={
   name: `gatsby-starter-default`,
   short_name: `starter`,
   start_url: `/`,
-  background_color: `#663399`,
-  theme_color: `#663399`,
   display: `minimal-ui`,
+  ...colors,
 };
 module.exports = {
   pluginManifest,

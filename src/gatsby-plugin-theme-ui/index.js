@@ -1,3 +1,8 @@
+import colors from '../data/colors';
+const {
+  theme_color: primary,
+  background_color: background,
+} = colors;
 const heading = {
   color: 'text',
   fontFamily: 'heading',
@@ -23,9 +28,8 @@ export default {
   },
   colors: {
     text: '#000',
-    background: '#fff',
-    muted: '#f6f6f6',
-    primary: '#609',
+    background: '#f6f6f6',
+    primary,
     secondary: '#306',
   },  
   styles: {
