@@ -1,6 +1,11 @@
 {
 	"folders": [
+    {
+      "name": "examples",
+			"path": "/home/ale/Development/duranzno.github.io/examples"
+    },
 		{
+      "name": "main",
 			"path": "/home/ale/Development/duranzno.github.io"
 		}
   ],

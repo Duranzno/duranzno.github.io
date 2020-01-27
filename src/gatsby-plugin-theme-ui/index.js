@@ -10,9 +10,9 @@ const heading = {
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'Poppins, sans-serif',
-    heading: 'Poppins, sans-serif',
-    monospace: 'Menlo, monospace',
+    body: 'Karla, Helvetica, sans-serif',
+    heading: 'Rubik, Helvetica, sans-serif',
+    monospace: 'Space Mono, monospace',
   },
   fontWeights: {
     body: 400,
