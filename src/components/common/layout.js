@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { HelmetProvider } from 'react-helmet-async'
+import { ScrollingProvider } from 'react-scroll-section'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Header } from '../header'
+import { Header, Footer } from '../theme'
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -16,10 +17,11 @@ export const Layout = ({ children }) => {
   `)
   return (
     <HelmetProvider>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
+      <ScrollingProvider>
+        <Header />
         <main>{children}</main>
-      </div>
+        <Footer />
+      </ScrollingProvider>
     </HelmetProvider>
   )
 }
