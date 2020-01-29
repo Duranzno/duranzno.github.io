@@ -18,7 +18,7 @@ module.exports={
     "es6": true
   },
   "rules": {
-    "no-console": 2,
+    "no-console": 'off',
     'quotes': 'off',
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/no-unresolved": 0,
