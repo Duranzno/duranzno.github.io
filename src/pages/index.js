@@ -6,11 +6,10 @@ import { Header } from '../components/theme'
 export default () => (
   <Layout>
     <SEO title="landing" />
-    <Header />
     <Intro />
-    <About />
-    <Projects />
-    <Writing />
+    {/* <About /> */}
+    {/* <Projects /> */}
+    {/* <Writing /> */}
     {/* <Skills /> */}
     {/* <Contact /> */}
   </Layout>
