@@ -1,12 +1,14 @@
 import React from 'react'
-import { Box } from 'theme-ui'
+import { Box, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { LinkAnimated } from './LinkAnimated'
 
 export const RouteLink = ({ onClick, selected, name }) => (
-  <Box ml={[2, 3]} color="background" fontSize={[2, 3]}>
+  <Box ml={[2, 3]} color="background">
     <LinkAnimated onClick={onClick} selected={selected}>
-      <h3>{name}</h3>
+      <Heading as="h3" sx={{ fontSize: [2, 3, 4] }}>
+        {name}
+      </Heading>
     </LinkAnimated>
   </Box>
 )

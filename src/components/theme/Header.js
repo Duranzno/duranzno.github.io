@@ -29,7 +29,7 @@ export const Header = () => {
           justifyContent: 'space-between',
           alignItems: 'center',
           px: [3, 5],
-          py: 1,
+          py: [3, 4],
         }}
       >
         <SectionLinks>

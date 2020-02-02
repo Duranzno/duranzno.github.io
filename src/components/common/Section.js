@@ -1,28 +1,27 @@
 import React from 'react'
 import { Section as ScrollSection } from 'react-scroll-section'
 import PropTypes from 'prop-types'
-import { Heading, Styled } from 'theme-ui'
+import { Heading, Container as C } from 'theme-ui'
 import { LinkAnimated } from '../micro'
 
 const Container = ({ id, children, sx }) => (
   <ScrollSection id={id} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-    <Styled.div
+    <C
+      className="a"
       sx={{
         minHeight: '100vh',
         minWidth: '320px',
-        maxWidth: '1440px',
-        display: 'flex',
         margin: 'auto',
-        flex: '0 1 auto',
+        flex: '1 1 auto',
+        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '5em 1em',
         scrollBehavior: 'smooth',
         ...sx,
       }}
     >
       {children}
-    </Styled.div>
+    </C>
   </ScrollSection>
 )
 

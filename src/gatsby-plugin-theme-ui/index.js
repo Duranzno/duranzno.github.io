@@ -12,7 +12,7 @@ export default {
   sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Karla, Helvetica, sans-serif',
-    heading: 'Rubik, Helvetica, sans-serif',
+    heading: 'Karla, Helvetica, sans-serif',
     monospace: 'Space Mono, monospace',
   },
   fontWeights: {

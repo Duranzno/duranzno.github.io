@@ -15,12 +15,12 @@ export const IntroContent = ({ contentfulAbout: data }) => {
       <Box
         className="grid-container"
         sx={{
-          display: 'grid',
-          gridGap: 1,
+          height: ['auto', null, '75vh'],
+          maxWidth: '100vw',
           py: [4, null, '6rem'],
           px: 1,
-          maxWidth: '100vw',
-          marginTop: '10vh',
+          display: 'grid',
+          gridGap: 1,
           gridTemplateColumns: ['unset', 'repeat(2, 1fr) 30% repeat(2, 1fr)'],
           gridTemplateRows: ['repeat(3,1fr)', 'repeat(2, 1fr) 30% repeat(2, 1fr)'],
           alignItems: 'center',
