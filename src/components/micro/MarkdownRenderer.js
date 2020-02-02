@@ -2,8 +2,9 @@ import React from 'react'
 import { SectionLink } from 'react-scroll-section'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
+import { Styled, Text } from 'theme-ui'
 
-const StyledLink = styled.a`
+const StyledLink = styled(Styled.a)`
   display: inline-block;
   transition: color 250ms, text-shadow 250ms;
   color: black;
@@ -20,13 +21,12 @@ const StyledLink = styled.a`
     content: '';
     width: 100%;
     height: 3px;
-    background-color: ${props => props.theme.colors.primaryLight};
+    background-color: ${props => props.theme.colors.primary};
     transition: all 250ms;
   }
 
   &:hover {
-    color: white;
-
+    color: ${props => props.theme.colors.secondary};
     &::after {
       height: 110%;
       width: 110%;
@@ -34,21 +34,21 @@ const StyledLink = styled.a`
   }
 `
 
-const MarkdownParagraph = styled.p`
-  line-height: 2em;
+const MarkdownParagraph = styled(Text)`
+  line-height: 1.5em;
 
-  &:first-of-type {
+  &:first-child {
     margin-top: 0em;
   }
 `
 
-const MarkdownList = styled.ul`
+const MarkdownList = styled(Styled.ul)`
   margin: 0;
 `
 
-const MarkdownListItem = styled.li`
+const MarkdownListItem = styled(Styled.li)`
   margin: 1em 0;
-  line-height: 2em;
+  font-size: ${props => `${props.theme.sizes[3]}px`};
 `
 
 const MarkdownLink = ({ href, children }) => {
@@ -68,10 +68,20 @@ MarkdownLink.propTypes = {
   href: PropTypes.string.isRequired,
   children: PropTypes.node,
 }
+MarkdownLink.defaultProps = {
+  children: <></>,
+}
 
-export const MarkdownRenderer = {
-  paragraph: props => <MarkdownParagraph {...props} />,
-  list: props => <MarkdownList {...props} />,
-  listItem: props => <MarkdownListItem {...props} />,
+export const MarkdownRenderers = {
+  paragraph: props => (
+    <MarkdownParagraph
+      sx={{
+        fontSize: [4],
+      }}
+      {...props}
+    />
+  ),
+  list: props => <MarkdownList sx={{}} {...props} />,
+  listItem: props => <MarkdownListItem sx={{}} {...props} />,
   link: MarkdownLink,
 }
