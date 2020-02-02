@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-awesome-reveal'
 import { StaticQuery, graphql } from 'gatsby'
 import { Text, Box, Link, Flex } from 'theme-ui'
 import { SocialLink } from '../micro'
@@ -54,15 +54,15 @@ const FooterComponent = data => {
             </span>
           </TextFooter>
         </Fade>
-        <Flex>
-          <Fade right>
+        <Fade right>
+          <Flex>
             {socialLinks.map(({ id, ...rest }) => (
               <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
                 <SocialLink {...rest} color="background" dim="15px" />
               </Box>
             ))}
-          </Fade>
-        </Flex>
+          </Flex>
+        </Fade>
       </FooterContainer>
     </Box>
   )

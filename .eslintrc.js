@@ -19,6 +19,7 @@ module.exports={
   },
   "rules": {
     "no-console": 'off',
+    'react/forbid-prop-types':'off',
     'quotes': 'off',
     'no-use-before-define':'off',
     'react/jsx-props-no-spreading':'off',

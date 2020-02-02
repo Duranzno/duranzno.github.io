@@ -9,6 +9,7 @@ const heading = {
 }
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Karla, Helvetica, sans-serif',
     heading: 'Rubik, Helvetica, sans-serif',
@@ -35,6 +36,10 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
+      minWidth: '320px',
+    },
+    body: {
+      minWidth: '320px',
     },
     h1: {
       ...heading,

@@ -18,11 +18,20 @@ const HeaderContainer = styled(Headroom)`
   }
   position: absolute;
   width: 100%;
+  max-height: 10vh;
 `
 export const Header = () => {
   return (
     <HeaderContainer>
-      <Flex sx={{ flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', px: 5, py: 1 }}>
+      <Flex
+        sx={{
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          px: [3, 5],
+          py: 1,
+        }}
+      >
         <SectionLinks>
           {({ allLinks }) => {
             const { home, links } = formatLinks(allLinks)
