@@ -26,6 +26,7 @@ const TextFooter = styled(Text)`
 const query = graphql`
   query FooterQuery {
     contentfulAbout {
+      name
       socialLinks {
         id
         url
@@ -37,7 +38,6 @@ const query = graphql`
 `
 const FooterComponent = data => {
   const { name, socialLinks } = data.contentfulAbout
-
   return (
     <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer">
       <FooterContainer>

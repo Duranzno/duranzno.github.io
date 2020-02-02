@@ -21,6 +21,7 @@ module.exports={
     "no-console": 'off',
     'quotes': 'off',
     'no-use-before-define':'off',
+    'react/jsx-props-no-spreading':'off',
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/no-unresolved": 0,
     "react/display-name": 0,
