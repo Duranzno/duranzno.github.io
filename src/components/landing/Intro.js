@@ -8,7 +8,6 @@ import { Section, SocialMediaTab } from '../common'
 import { ProfilePicture } from '../micro'
 
 export const IntroContent = ({ contentfulAbout: data }) => {
-  console.log(data)
   const { profile, title, socialLinks } = data
   return (
     <Section.Container id="home">

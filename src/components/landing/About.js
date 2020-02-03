@@ -2,7 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown/with-html'
 import { Fade } from 'react-awesome-reveal'
 import { graphql, StaticQuery } from 'gatsby'
-import { Flex, Box, Image } from 'theme-ui'
+import { Flex, Box } from 'theme-ui'
 import { Section } from '../common'
 import { MarkdownRenderers } from '../micro'
 

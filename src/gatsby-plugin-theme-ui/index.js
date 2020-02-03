@@ -1,15 +1,22 @@
-import colors from '../data/colors'
+import mainColors from '../data/colors'
 
-const { theme_color: primary } = colors
+const { theme_color: primary } = mainColors
+const colors = {
+  text: '#000',
+  background: '#f6f6f6',
+  primary,
+  secondary: '#306',
+}
 const heading = {
   color: 'text',
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
 }
+const sizes = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  sizes,
   fonts: {
     body: 'Karla, Helvetica, sans-serif',
     heading: 'Karla, Helvetica, sans-serif',
@@ -25,12 +32,7 @@ export default {
     body: 1.5,
     heading: 1.125,
   },
-  colors: {
-    text: '#000',
-    background: '#f6f6f6',
-    primary,
-    secondary: '#306',
-  },
+  colors,
   styles: {
     root: {
       fontFamily: 'body',
@@ -107,6 +109,21 @@ export default {
       width: 48,
       height: 48,
       borderRadius: 99999,
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      width: sizes[8],
+      borderRadius: 4,
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+      backgroundColor: colors.background,
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 2,
+      border: '1px solid',
+      borderColor: 'muted',
     },
   },
 }
