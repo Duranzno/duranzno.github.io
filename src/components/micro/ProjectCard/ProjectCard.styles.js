@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { Box, Card } from 'theme-ui'
 
-export const Container = styled.div`
-  margin: 0 auto;
+export const Container = styled(Box)`
+  /* margin: 0 auto;
   height: 130px;
   position: relative;
   perspective: 600px;
@@ -14,8 +15,9 @@ export const Container = styled.div`
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transition: all 0.4s ease-in-out;
-  }
+  } */
 `
+export const StyledCard = styled(Card)``
 
 export const ProjectPropTypes = {
   project: PropTypes.shape({

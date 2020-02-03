@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { Section } from '../common'
-import { Back, Front } from '../micro/ProjectCard.styles'
+import { ProjectCard } from '../micro/ProjectCard'
 
 const ProjectsComponent = data => {
   const { nodes: projects } = data.allContentfulProject
@@ -10,15 +10,11 @@ const ProjectsComponent = data => {
       id="projects"
       sx={{
         backgroundColor: 'grey',
-        display: 'flex',
-        px: '2',
-        py: 4,
-        justifyContent: 'center',
       }}
     >
       <Section.Header name="Projects" />
 
-      <Project project={projects[1]} />
+      <ProjectCard project={projects[1]} />
     </Section.Container>
   )
 }

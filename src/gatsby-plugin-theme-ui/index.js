@@ -113,11 +113,13 @@ export default {
   },
   cards: {
     primary: {
-      padding: 2,
-      width: sizes[8],
-      borderRadius: 4,
-      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
-      backgroundColor: colors.background,
+      // padding: 2,
+      // width: sizes[8],
+      // maxWidth: sizes[8],
+      // minHeight: '384px',
+      // borderRadius: 4,
+      // boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+      // backgroundColor: colors.background,
     },
     compact: {
       padding: 1,
