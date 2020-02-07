@@ -17,7 +17,7 @@ export const IntroContent = ({ contentfulAbout: data }) => {
           height: ['auto', null, '75vh'],
           maxWidth: '100vw',
           py: [4, null, '6rem'],
-          px: 1,
+          px: 3,
           display: 'grid',
           gridGap: 1,
           gridTemplateColumns: ['unset', 'repeat(2, 1fr) 30% repeat(2, 1fr)'],

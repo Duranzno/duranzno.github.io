@@ -13,7 +13,6 @@ const ProjectsComponent = data => {
         px: 5,
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '60vh',
       }}
     >
       <Section.Header name="Projects" label="Projects" />

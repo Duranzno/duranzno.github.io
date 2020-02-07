@@ -32,7 +32,7 @@ export const ProjectCard = ({ project }) => {
   return (
     <Box
       className="project-card"
-      sx={{ display: 'flex', direction: 'row', width: '750px', justifyContent: 'space-between' }}
+      sx={{ display: 'flex', direction: 'row', justifyContent: 'space-between' }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
