@@ -8,6 +8,8 @@ export default () => (
     <Intro />
     <About />
     <Projects />
+    <Intro />
+    <About />
     {/* <Writing /> */}
   </Layout>
 )

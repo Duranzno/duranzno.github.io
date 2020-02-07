@@ -14,10 +14,13 @@ const ProjectsComponent = data => {
       }}
     >
       <Box
+        className="container"
         sx={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
+          px: 4,
+          display: 'grid',
+          gridGap: '1.5rem',
+          gridAutoRows: '1fr',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
         }}
       >
         {projects.map(p => (
