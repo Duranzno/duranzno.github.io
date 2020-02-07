@@ -10,16 +10,23 @@ const ProjectsComponent = data => {
     <Section.Container
       id="projects"
       sx={{
-        px: '2',
+        px: 5,
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '60vh',
       }}
     >
+      <Section.Header name="Projects" label="Projects" />
       <Box
-        className="container"
         sx={{
-          px: 4,
+          minWidth: 'inherit',
+          minHeight: 'inherit',
           display: 'grid',
           gridGap: '1.5rem',
           gridAutoRows: '1fr',
+          gridAutoFlow: 'dense',
+          alignItems: 'center',
+          alignContent: 'center',
           gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
         }}
       >

@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Box } from 'theme-ui'
 import { useSpring, animated as a } from 'react-spring'
-import { Back } from './BackCard'
-import { Front } from './FrontCard'
-import './a.css'
+import { BackCard } from './BackCard'
+import { FrontCard } from './FrontCard'
 
 const DELAY = 100
 export const ProjectCard = ({ project }) => {
@@ -12,8 +11,13 @@ export const ProjectCard = ({ project }) => {
   const [delayHandler, setDelayHandler] = useState(null)
 
   const { transform, opacity } = useSpring({
+    minWidth: '100%',
+    willChange: 'transform, opacity',
+    cursor: 'pointer',
+
+    mixBlendMode: 'multiply',
     opacity: flipped ? 1 : 0,
-    transform: `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
+    transform: `rotateY(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   })
   const handleMouseEnter = () => {
@@ -33,22 +37,24 @@ export const ProjectCard = ({ project }) => {
       onMouseLeave={handleMouseLeave}
     >
       <a.div
-        class="c back"
+        className="c back"
         style={{
+          position: 'unset',
           opacity: opacity.interpolate(o => 1 - o),
           transform,
         }}
       >
-        <Back project={project} flipped={false} />
+        <BackCard project={project} flipped={false} />
       </a.div>
       <a.div
-        class="c front"
+        className="c front"
         style={{
+          position: 'absolute',
           opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),
         }}
       >
-        <Front project={project} flipped={false} />
+        <FrontCard project={project} flipped={false} />
       </a.div>
     </Box>
   )

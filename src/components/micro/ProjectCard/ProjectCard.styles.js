@@ -39,6 +39,6 @@ export const ProjectPropTypes = {
     logo: PropTypes.object,
     stack: PropTypes.array,
     screenshots: PropTypes.array,
-    type: PropTypes.array,
+    type: PropTypes.object,
   }).isRequired,
 }

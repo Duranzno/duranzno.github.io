@@ -6,9 +6,7 @@ export default () => (
   <Layout>
     <SEO title="landing" />
     <Intro />
-    <About />
     <Projects />
-    <Intro />
     <About />
     {/* <Writing /> */}
   </Layout>

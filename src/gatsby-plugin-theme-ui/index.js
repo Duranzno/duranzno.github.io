@@ -130,7 +130,7 @@ export default {
   },
   text: {
     small: {
-      size: '8px',
+      size: '16px',
       textTransform: 'uppercase',
       letterSpacing: '0.2em',
     },
