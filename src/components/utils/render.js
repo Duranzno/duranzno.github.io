@@ -16,3 +16,9 @@ export const formatLinks = allLinks =>
     },
     { links: [], home: null }
   )
+export const setLimitLength = (maxLength = 250) => str => {
+  if (str.length >= maxLength) {
+    return `${str.substr(0, maxLength - 3)}...`
+  }
+  return str
+}

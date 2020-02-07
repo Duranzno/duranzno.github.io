@@ -5,8 +5,8 @@ import { Layout, SEO } from '../components/common'
 export default () => (
   <Layout>
     <SEO title="landing" />
-    {/* <Intro /> */}
-    {/* <About /> */}
+    <Intro />
+    <About />
     <Projects />
     {/* <Writing /> */}
   </Layout>

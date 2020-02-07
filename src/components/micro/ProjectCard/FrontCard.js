@@ -1,29 +1,58 @@
 import React from 'react'
-import styled from '@emotion/styled'
-import { Text, Link, Image } from 'theme-ui'
-import { ProjectPropTypes, StyledCard } from './ProjectCard.styles'
 
-const StyledFront = styled(StyledCard)`
-  z-index: 900;
-  /* transform: ${props => (props.flipped ? ' rotateX(0deg) rotateY(0deg)' : 'rotateY(180deg)')}; */
-`
+import { Text, Image, Heading, Flex } from 'theme-ui'
+import { Fade } from 'react-awesome-reveal'
+import useInterval from '@use-it/interval'
+import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
+import { SocialLink } from '../SocialLink'
+import { setLimitLength } from '../../utils'
 
-export const Front = ({ project, flipped }) => {
+const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
+const DELAY = 3000
+const MAX_LENGTH = 175
+const createProjectLinks = project => {
+  return [
+    {
+      ...SOCIAL_LINK_PROP,
+      name: 'Repository',
+      iconifyName: 'mdi:github-circle',
+      url: project.repositoryUrl,
+    },
+    { ...SOCIAL_LINK_PROP, name: 'Project', iconifyName: 'mdi:web', url: project.projectUrl },
+  ]
+}
+export const Front = ({ project }) => {
+  const [stackIndex, setStackIndex] = React.useState(0)
+  const limitLength = setLimitLength(MAX_LENGTH)
+  useInterval(() => {
+    setStackIndex(stackIndex === project.stack.length - 1 ? 0 : stackIndex + 1)
+  }, DELAY)
+  const projectLinks = createProjectLinks(project)
   return (
-    <StyledFront flipped={flipped} className="front-card">
-      <Text>{project.name}</Text>
-      <Link variant="nav" href={project.repositoryUrl}>
-        <span className="iconify" data-icon="mdi:github-circle" data-inline="false" />
-      </Link>
-      <Link variant="nav" href={project.projectUrl}>
-        <span className="iconify" data-icon="mdi:web" data-inline="false" />
-      </Link>
-      <Text>{project.description}</Text>
-      <Text>{new Date(project.publishedDate).getFullYear()}</Text>
-      <Image src={project.logo.file.url} sx={{ size: [5] }} />
-    </StyledFront>
+    <StyledCard
+      sx={{ pt: 3, px: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
+    >
+      <Heading as="h2">{project.name}</Heading>
+      <Heading as="h6">{new Date(project.publishedDate).getFullYear()}</Heading>
+      <Flex sx={{ justifyContent: 'center' }}>
+        {projectLinks.map(v => (
+          <SocialLink key={v.url} {...v} />
+        ))}
+      </Flex>
+
+      <Text sx={{ flexGrow: '1' }}>{limitLength(project.description)}</Text>
+      <Flex sx={{ justifyContent: 'space-between', alignItems: 'flex-end', alignSelf: 'flex-end' }}>
+        <Fade LightSpeed>
+          <Text variant="small">{project.stack[stackIndex].name}</Text>
+        </Fade>
+        {project.logo && <Image src={project.logo.file.url} sx={{ size: 4 }} />}
+      </Flex>
+    </StyledCard>
   )
 }
 Front.propTypes = {
   ...ProjectPropTypes,
+}
+Front.defaultProps = {
+  ...ProjectDefaultProps,
 }

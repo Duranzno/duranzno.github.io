@@ -16,24 +16,26 @@ const IconLink = styled(Link)`
     color: ${props => props.theme.colors.primaryLight};
   }
 `
-export const SocialLink = ({ iconifyName, name, url, color, sx }) => {
+export const SocialLink = ({ iconifyName, name, url, color, sx, onClick }) => {
   return (
     <Tippy content={name} placement="bottom" trigger="mouseenter" arrow={false}>
-      <IconLink href={url} target="_blank" color={color} rel="noreferrer" aria-label={name}>
+      <IconLink href={url} target="_blank" color={color} rel="noreferrer" aria-label={name} onClick={onClick}>
         <Styled.div className="iconify" data-icon={iconifyName} data-width="250px" data-height="250px" sx={sx} />
       </IconLink>
     </Tippy>
   )
 }
-
 SocialLink.propTypes = {
   iconifyName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  onClick: PropTypes.func,
   color: PropTypes.string,
   sx: PropTypes.object,
 }
 SocialLink.defaultProps = {
   color: '',
+  url: '#',
+  onClick: () => {},
   sx: { width: 4, height: 4 },
 }

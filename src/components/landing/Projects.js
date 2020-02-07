@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+import { Box } from 'theme-ui'
 import { Section } from '../common'
 import { ProjectCard } from '../micro/ProjectCard'
 
@@ -9,12 +10,20 @@ const ProjectsComponent = data => {
     <Section.Container
       id="projects"
       sx={{
-        backgroundColor: 'grey',
+        px: '2',
       }}
     >
-      <Section.Header name="Projects" />
-
-      <ProjectCard project={projects[1]} />
+      <Box
+        sx={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {projects.map(p => (
+          <ProjectCard key={p.id} project={p} />
+        ))}
+      </Box>
     </Section.Container>
   )
 }
@@ -29,6 +38,7 @@ const query = graphql`
         projectUrl
         publishedDate
         repositoryUrl
+        blurb
         logo {
           file {
             url

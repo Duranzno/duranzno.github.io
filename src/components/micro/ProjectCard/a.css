@@ -1,0 +1,6 @@
+.c{
+
+  position: absolute;
+  cursor: pointer;
+  will-change: transform, opacity;
+}

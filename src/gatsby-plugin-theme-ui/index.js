@@ -128,4 +128,11 @@ export default {
       borderColor: 'muted',
     },
   },
+  text: {
+    small: {
+      size: '8px',
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
+  },
 }
