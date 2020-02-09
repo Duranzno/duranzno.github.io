@@ -5,7 +5,6 @@ ID = "Your_Site_ID"
   publish = "public"
   command = "yarn build"
   functions = "functions/"
-  ignore = "git diff --quiet HEAD^ HEAD src/"
   # If skip_processing = true, all other settings are ignored
   [build.processing]
     skip_processing = false
