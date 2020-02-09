@@ -4,30 +4,27 @@ import { graphql } from 'gatsby'
 import { get } from '@utils'
 import { Layout, SEO } from '@common'
 import { Hero, ArticlePreview } from '@components/Blog'
+import { Box } from 'theme-ui'
 import { IconifyIcon } from '../micro/Icons/IconifyIcon'
+import { TechTag } from '../micro/Icons/TechTag'
 // eslint-disable-next-line react/prop-types
 const BlogIndex = ({ location, data }) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
   return (
     <Layout>
-      <IconifyIcon iconifyName="mdi:arow-right" size="250px" />
-      {/* <div style={{ background: '#fff' }}>
-        <SEO title={siteTitle} />
-        <Hero>Blog</Hero>
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </div> */}
+      <Box
+        sx={{
+          minWidth: '100vw',
+          minHeight: '100vh',
+          display: 'flex',
+          alignContent: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <TechTag iconifyName="logos:redux" name="Redux" />
+      </Box>
     </Layout>
   )
 }

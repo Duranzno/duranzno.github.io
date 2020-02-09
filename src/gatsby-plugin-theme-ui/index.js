@@ -4,8 +4,10 @@ import mainColors from '../data/colors'
 const { theme_color: primary } = mainColors
 const colors = {
   text: '#000000',
+  textWhite: '#EEE',
   background: '#f6f6f6',
   primary,
+  black: 'black',
   secondary: '#306',
 }
 const heading = {
@@ -146,6 +148,22 @@ export default {
       size: '16px',
       textTransform: 'uppercase',
       letterSpacing: '0.2em',
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'text',
+      },
+    },
+    tag: {
+      color: 'textWhite',
+      bg: 'black',
+      fontFamily: 'monospace',
+      borderRadius: '0%',
+      borderColor: 'transparent',
     },
   },
 }

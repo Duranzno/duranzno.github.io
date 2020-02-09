@@ -10,7 +10,7 @@ const Icon = styled(Styled.div)`
   top: ${props => (props.x ? `${props.x}px` : 'unset')};
   left: ${props => (props.y ? `${props.y}px` : 'unset')};
 `
-export const IconifyIcon = ({ iconifyName, x, y, sx = { width: 2, height: 2 } }) => {
+export const IconifyIcon = ({ iconifyName, x, y, sx = { width: 3, height: 3 } }) => {
   const {
     theme: { sizes },
   } = useThemeUI()

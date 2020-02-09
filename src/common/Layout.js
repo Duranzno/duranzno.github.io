@@ -3,9 +3,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { HelmetProvider } from 'react-helmet-async'
 import { ScrollingProvider } from 'react-scroll-section'
-import { Header } from './Header'
 import { Footer } from './Footer'
 import { Background } from './Background'
+import { Header } from './Header'
 
 const loadScript = src => {
   const tag = document.createElement('script')
@@ -14,14 +14,14 @@ const loadScript = src => {
 
   document.getElementsByTagName('body')[0].appendChild(tag)
 }
-export const Layout = ({ children }) => {
+export const Layout = ({ children, H }) => {
   React.useEffect(() => {
     loadScript('https://code.iconify.design/1/1.0.3/iconify.min.js')
   }, [])
   return (
     <HelmetProvider>
       <ScrollingProvider>
-        <Header />
+        {H}
         <Background>
           <main>{children}</main>
         </Background>
@@ -33,4 +33,8 @@ export const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  H: PropTypes.node,
+}
+Layout.defaultProps = {
+  H: <Header />,
 }

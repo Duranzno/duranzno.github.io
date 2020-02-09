@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Text, Image, Heading, Flex } from 'theme-ui'
 import { Fade } from 'react-awesome-reveal'
@@ -23,7 +23,8 @@ const createProjectLinks = project => {
   ]
 }
 export const BackCard = ({ project }) => {
-  const [stackIndex, setStackIndex] = React.useState(0)
+  const [stackIndex, setStackIndex] = useState(0)
+  const [tagList] = useState(project.stack.map(v => <TechTag key={v.name} {...v} />))
   const limitLength = setLimitLength(MAX_LENGTH)
   useInterval(() => {
     setStackIndex(stackIndex === project.stack.length - 1 ? 0 : stackIndex + 1)
@@ -43,9 +44,7 @@ export const BackCard = ({ project }) => {
 
       <Text sx={{ flexGrow: '1' }}>{limitLength(project.description)}</Text>
       <Flex sx={{ justifyContent: 'space-between', alignItems: 'flex-end', alignSelf: 'flex-end' }}>
-        <Fade LightSpeed>
-          <TechTag {...project.stack[stackIndex]} />
-        </Fade>
+        <Fade LightSpeed>{tagList[stackIndex]}</Fade>
         {project.logo && <Image src={project.logo.file.url} sx={{ size: 4 }} />}
       </Flex>
     </StyledCard>
