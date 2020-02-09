@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Image, Box } from 'theme-ui'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
-import { SocialLink } from '../index'
+import { IconifyLink } from '../index'
 
 export const FrontCard = ({ project }) => (
   <StyledCard className="FrontCard-card" sx={{ textAlign: 'center' }}>
@@ -12,18 +12,6 @@ export const FrontCard = ({ project }) => (
           {project.name}
         </Text>
         <Text sx={{ fontSize: 2 }}>{project.blurb}</Text>
-      </Box>
-      <Box sx={{ alignSelf: 'flex-end', pr: 1, ml: 'auto' }}>
-        {project.stack.slice(0, 3).map(({ id, iconifyName, name }) => (
-          <SocialLink
-            iconifyName={iconifyName}
-            name={name}
-            sx={{ width: 4, height: 4, mx: 2 }}
-            key={id}
-            color="black"
-            url="google.com"
-          />
-        ))}
       </Box>
     </Box>
   </StyledCard>

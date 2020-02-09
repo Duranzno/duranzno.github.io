@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { get } from '@utils'
 import { Layout, SEO } from '@common'
 import { Hero, ArticlePreview } from '@components/Blog'
-
 // eslint-disable-next-line react/prop-types
 const BlogIndex = ({ location, data }) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
@@ -12,7 +11,7 @@ const BlogIndex = ({ location, data }) => {
   console.log(JSON.stringify({ siteTitle, posts, location }))
   return (
     <Layout>
-      <div style={{ background: '#fff' }}>
+      {/* <div style={{ background: '#fff' }}>
         <SEO title={siteTitle} />
         <Hero>Blog</Hero>
         <div className="wrapper">
@@ -27,7 +26,7 @@ const BlogIndex = ({ location, data }) => {
             })}
           </ul>
         </div>
-      </div>
+      </div> */}
     </Layout>
   )
 }

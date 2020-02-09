@@ -5,7 +5,7 @@ import { Fade } from 'react-awesome-reveal'
 import useInterval from '@use-it/interval'
 import { setLimitLength } from '@utils'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
-import { SocialLink } from '../SocialLink'
+import { IconifyLink } from '../IconifyLink'
 import { TechTag } from '../TechTag'
 
 const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
@@ -37,7 +37,7 @@ export const BackCard = ({ project }) => {
       <Heading as="h6">{new Date(project.publishedDate).getFullYear()}</Heading>
       <Flex sx={{ justifyContent: 'center' }}>
         {projectLinks.map(v => (
-          <SocialLink key={v.url} {...v} />
+          <IconifyLink key={v.url} {...v} sx={{ width: 2, height: 2 }} />
         ))}
       </Flex>
 

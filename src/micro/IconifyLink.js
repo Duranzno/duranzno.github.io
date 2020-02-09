@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link, Styled, useThemeUI } from 'theme-ui'
+import { Link, Styled } from 'theme-ui'
 import Tippy from '@tippy.js/react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import 'tippy.js/dist/tippy.css'; // eslint-disable-line
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { IconifyIcon } from './IconifyIcon'
 
 const IconLink = styled(Link)`
   transition: color 0.5s;
@@ -16,16 +15,17 @@ const IconLink = styled(Link)`
     color: ${props => props.theme.colors.primaryLight};
   }
 `
-export const SocialLink = ({ iconifyName, name, url, color, sx, onClick }) => {
+export const IconifyLink = ({ iconifyName, name, url, color, sx, onClick }) => {
   return (
     <Tippy content={name} placement="bottom" trigger="mouseenter" arrow={false}>
       <IconLink href={url} target="_blank" color={color} rel="noreferrer" aria-label={name} onClick={onClick}>
-        <Styled.div className="iconify" data-icon={iconifyName} data-width="250px" data-height="250px" sx={sx} />
+        {/* <Styled.div className="iconify" data-icon={iconifyName} data-width="250px" data-height="250px" sx={sx} /> */}
+        <IconifyIcon iconifyName={iconifyName} sx={sx} />
       </IconLink>
     </Tippy>
   )
 }
-SocialLink.propTypes = {
+IconifyLink.propTypes = {
   iconifyName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string,
@@ -33,7 +33,7 @@ SocialLink.propTypes = {
   color: PropTypes.string,
   sx: PropTypes.object,
 }
-SocialLink.defaultProps = {
+IconifyLink.defaultProps = {
   color: '',
   url: '#',
   onClick: () => {},

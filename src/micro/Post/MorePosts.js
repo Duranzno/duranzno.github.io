@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Flex, Box, Heading, Text } from 'theme-ui'
 import { Card, EllipsisHeading } from './Post.styles'
-import { SocialLink } from '../SocialLink'
+import { IconifyLink } from '../IconifyLink'
 
 export const MorePosts = ({ number, url }) => (
   // eslint-disable-next-line no-undef
@@ -19,7 +19,7 @@ export const MorePosts = ({ number, url }) => (
       </Box>
       <Heading color="primary" mt={5} textAlign="right">
         Go to Blog &nbsp;
-        <SocialLink sx={{ width: 3, height: 3 }} iconifyName="mdi-arrow-right" name="" />
+        <IconifyLink sx={{ width: 3, height: 3 }} iconifyName="mdi-arrow-right" name="" />
       </Heading>
     </Flex>
   </Card>

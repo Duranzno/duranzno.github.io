@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Fade } from 'react-awesome-reveal'
 import { StaticQuery, graphql } from 'gatsby'
 import { Text, Box, Link, Flex } from 'theme-ui'
-import { SocialLink } from '@components'
+import { IconifyLink } from '@components'
 
 const FooterContainer = styled.div`
   min-width: 320px;
@@ -38,6 +38,11 @@ const query = graphql`
 `
 const FooterComponent = data => {
   const { name, socialLinks } = data.contentfulAbout
+  const Links = socialLinks.map(({ id, ...rest }) => (
+    <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
+      <IconifyLink {...rest} sx={{ width: 1, height: 1 }} />
+    </Box>
+  ))
   return (
     <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer">
       <FooterContainer>
@@ -55,13 +60,7 @@ const FooterComponent = data => {
           </TextFooter>
         </Fade>
         <Fade right>
-          <Flex>
-            {socialLinks.map(({ id, ...rest }) => (
-              <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
-                <SocialLink {...rest} color="background" dim="15px" />
-              </Box>
-            ))}
-          </Flex>
+          <Flex>{Links}</Flex>
         </Fade>
       </FooterContainer>
     </Box>
