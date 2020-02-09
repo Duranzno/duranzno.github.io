@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Text } from 'theme-ui'
-import styled from '@emotion/styled'
 import { ImageSubtitle, EllipsisHeading, CoverImage, Card } from './Post.styles'
 
 export const Post = ({ title, text, image, url, date, time }) => (
@@ -25,15 +24,3 @@ Post.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 }
-
-export const CardContainer = styled.div`
-  display: grid;
-  grid-gap: 30px;
-
-  grid-template-columns: repeat(auto-fill, minmax(${props => props.minWidth}, 1fr));
-  justify-items: center;
-
-  @media only screen and (max-width: 400px) {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
-`

@@ -31,13 +31,11 @@ export const ProjectCard = ({ project }) => {
   }
   return (
     <Box
-      className="project-card"
       sx={{ display: 'flex', direction: 'row', justifyContent: 'space-between' }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <a.div
-        className="c back"
         style={{
           position: 'unset',
           opacity: opacity.interpolate(o => 1 - o),
@@ -47,7 +45,6 @@ export const ProjectCard = ({ project }) => {
         <FrontCard project={project} />
       </a.div>
       <a.div
-        className="c front"
         style={{
           position: 'absolute',
           opacity,

@@ -23,6 +23,7 @@ export const Card = styled(CardThemeUI)`
   transition: all 0.25s;
   top: 0;
   height: 100%;
+  min-height: 500px;
   cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 
   &:hover {
