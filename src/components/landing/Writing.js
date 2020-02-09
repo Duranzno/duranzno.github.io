@@ -7,21 +7,28 @@ import { CardContainer, Post, MorePosts } from '../micro/Post'
 const parsePost = postFromGraphql => {
   const {
     id,
-    createdAt,
+    createdAt: date,
     title,
-    image: {
+    slug,
+    heroImage: {
       file: { url: image },
     },
-    childContentfulBlogPostBlurbTextNode: { blurb },
+    description: {
+      childMarkdownRemark: { rawMarkdownBody: text },
+    },
+    body: {
+      childMarkdownRemark: { timeToRead: time },
+    },
   } = postFromGraphql
   return {
     id,
     title,
-    text: blurb,
+    text,
     image,
+    slug,
     url: 'www.google.com', // TODO: urlForText
-    time: '10', // TODO: readinTime
-    date: createdAt,
+    time,
+    date,
     Component: Post,
   }
 }
@@ -58,16 +65,23 @@ const query = graphql`
           id
           title
           createdAt(formatString: "MMM YYYY")
-          image {
+          slug
+          heroImage {
             file {
               url
+              fileName
+              contentType
             }
           }
-          childContentfulBlogPostBlurbTextNode {
-            blurb
+          body {
+            childMarkdownRemark {
+              timeToRead
+            }
           }
-          childContentfulBlogPostBodyRichTextNode {
-            body
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
+            }
           }
         }
       }

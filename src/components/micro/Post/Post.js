@@ -18,21 +18,12 @@ export const Post = ({ title, text, image, url, date, time }) => (
 )
 
 Post.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string,
-  image: PropTypes.string,
-  url: PropTypes.string,
-  date: PropTypes.string,
-  time: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-}
-Post.defaultProps = {
-  title: 'Post N3',
-  text:
-    'This is the last post I’m going to do, so if you have been reading this posts I realized how much free time you have. But in case you w',
-  image: 'https://cdn-images-1.medium.com/max/400/1*dSz1eA7kGciePhd6tZG9Bg.jpeg',
-  url: 'www.google.com',
-  date: '2019',
-  time: 10,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  time: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 }
 
 export const CardContainer = styled.div`
