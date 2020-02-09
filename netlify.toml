@@ -20,4 +20,5 @@ ID = "Your_Site_ID"
     compress = true
   [build.environment]
     YARN_VERSION = "1.22.0"
+    NODE_VERSION = "12.15.0"
     YARN_FLAGS = "--no-ignore-optional"
