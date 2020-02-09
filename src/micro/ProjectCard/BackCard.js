@@ -6,6 +6,7 @@ import useInterval from '@use-it/interval'
 import { setLimitLength } from '@utils'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
 import { SocialLink } from '../SocialLink'
+import { TechTag } from '../TechTag'
 
 const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
 const DELAY = 3000
@@ -43,7 +44,7 @@ export const BackCard = ({ project }) => {
       <Text sx={{ flexGrow: '1' }}>{limitLength(project.description)}</Text>
       <Flex sx={{ justifyContent: 'space-between', alignItems: 'flex-end', alignSelf: 'flex-end' }}>
         <Fade LightSpeed>
-          <Text variant="small">{project.stack[stackIndex].name}</Text>
+          <TechTag {...project.stack[stackIndex]} />
         </Fade>
         {project.logo && <Image src={project.logo.file.url} sx={{ size: 4 }} />}
       </Flex>

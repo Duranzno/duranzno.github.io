@@ -3,7 +3,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import { randomizePosition, useWindowSize } from '@utils'
-import { StackIcon } from '@components'
+import { IconifyIcon } from '@components'
 
 // import { UpDown, UpDownWide } from './Background.animations'
 
@@ -21,7 +21,7 @@ export const TechBackground = () => {
         } = e
         const { x, y } = randomizePosition(dimensions)
         const choose = !!Math.random()
-        return <StackIcon x={x} id={id} key={id} y={y} name={name} iconifyName={iconifyName} url={name} />
+        return <IconifyIcon x={x} id={id} key={id} y={y} name={name} iconifyName={iconifyName} url={name} />
         // return choose ? <UpDown key={id}>{icon}</UpDown> : <UpDownWide key={id}>{icon}</UpDownWide>
         // return icon
       })}
