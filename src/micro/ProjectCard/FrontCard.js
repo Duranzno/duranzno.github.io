@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, Image, Box } from 'theme-ui'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
-import { IconifyLink } from '../index'
 
 export const FrontCard = ({ project }) => (
   <StyledCard className="FrontCard-card" sx={{ textAlign: 'center' }}>

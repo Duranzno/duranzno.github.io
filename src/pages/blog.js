@@ -4,13 +4,14 @@ import { graphql } from 'gatsby'
 import { get } from '@utils'
 import { Layout, SEO } from '@common'
 import { Hero, ArticlePreview } from '@components/Blog'
+import { IconifyIcon } from '../micro/Icons/IconifyIcon'
 // eslint-disable-next-line react/prop-types
 const BlogIndex = ({ location, data }) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allContentfulBlogPost.edges')
-  console.log(JSON.stringify({ siteTitle, posts, location }))
   return (
     <Layout>
+      <IconifyIcon iconifyName="mdi:arow-right" size="250px" />
       {/* <div style={{ background: '#fff' }}>
         <SEO title={siteTitle} />
         <Hero>Blog</Hero>

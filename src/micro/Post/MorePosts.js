@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Flex, Box, Heading, Text } from 'theme-ui'
+import { Flex, Box, Heading } from 'theme-ui'
 import { Card, EllipsisHeading } from './Post.styles'
-import { IconifyLink } from '../IconifyLink'
+import { IconifyLink } from '../Icons/IconifyLink'
 
 export const MorePosts = ({ number, url }) => (
   // eslint-disable-next-line no-undef

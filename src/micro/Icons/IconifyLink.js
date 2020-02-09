@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Styled } from 'theme-ui'
+import { Link } from 'theme-ui'
 import Tippy from '@tippy.js/react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
@@ -19,7 +19,6 @@ export const IconifyLink = ({ iconifyName, name, url, color, sx, onClick }) => {
   return (
     <Tippy content={name} placement="bottom" trigger="mouseenter" arrow={false}>
       <IconLink href={url} target="_blank" color={color} rel="noreferrer" aria-label={name} onClick={onClick}>
-        {/* <Styled.div className="iconify" data-icon={iconifyName} data-width="250px" data-height="250px" sx={sx} /> */}
         <IconifyIcon iconifyName={iconifyName} sx={sx} />
       </IconLink>
     </Tippy>

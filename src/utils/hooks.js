@@ -9,7 +9,7 @@ export function useWindowSize() {
     }
     window.addEventListener('resize', updateSize)
     updateSize()
-    console.log(size)
+    // console.log(size)
     return () => window.removeEventListener('resize', updateSize)
   }, [])
   return size

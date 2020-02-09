@@ -40,7 +40,7 @@ const FooterComponent = data => {
   const { name, socialLinks } = data.contentfulAbout
   const Links = socialLinks.map(({ id, ...rest }) => (
     <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
-      <IconifyLink {...rest} sx={{ width: 1, height: 1 }} />
+      <IconifyLink {...rest} sx={{ width: 4, height: 4 }} />
     </Box>
   ))
   return (

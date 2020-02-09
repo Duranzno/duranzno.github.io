@@ -11,7 +11,7 @@ import { TechBackground } from '@common/Background'
 export const IntroContent = ({ contentfulAbout: data }) => {
   const { profile, title, socialLinks } = data
   return (
-    <Section.Container id="home" Background={TechBackground}>
+    <Section.Container id="home">
       <Box
         className="grid-container"
         sx={{
