@@ -23,7 +23,7 @@ Post.propTypes = {
   image: PropTypes.string,
   url: PropTypes.string,
   date: PropTypes.string,
-  time: PropTypes.number,
+  time: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 Post.defaultProps = {
   title: 'Post N3',

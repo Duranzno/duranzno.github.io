@@ -13,7 +13,7 @@ const AboutComponent = data => {
     },
   } = data.contentfulAbout
   return (
-    <Section.Container id="about" sx={{ px: 7 }}>
+    <Section.Container id="about" sx={{ px: [4, null, 7] }}>
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
           <Fade bottom>
