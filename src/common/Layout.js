@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { ScrollingProvider } from 'react-scroll-section'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import { Background } from './Background'
 
 const loadScript = src => {
   const tag = document.createElement('script')
@@ -21,7 +22,9 @@ export const Layout = ({ children }) => {
     <HelmetProvider>
       <ScrollingProvider>
         <Header />
-        <main>{children}</main>
+        <Background>
+          <main>{children}</main>
+        </Background>
         <Footer />
       </ScrollingProvider>
     </HelmetProvider>

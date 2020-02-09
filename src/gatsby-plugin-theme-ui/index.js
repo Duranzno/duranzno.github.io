@@ -39,7 +39,6 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      minWidth: '320px',
       '::-webkit-scrollbar': {
         width: '10px',
       },
@@ -52,6 +51,7 @@ export default {
       '::-webkit-scrollbar-thumb:hover': {
         WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.primary, 1)}`,
       },
+      overflowX: 'hidden',
     },
     body: {
       minWidth: '320px',

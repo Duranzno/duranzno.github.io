@@ -6,11 +6,12 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import { ProfilePicture } from '@components'
 import { Section, SocialMediaTab } from '@common'
+import { TechBackground } from '@common/Background'
 
 export const IntroContent = ({ contentfulAbout: data }) => {
   const { profile, title, socialLinks } = data
   return (
-    <Section.Container id="home">
+    <Section.Container id="home" Background={TechBackground}>
       <Box
         className="grid-container"
         sx={{

@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import { Section as ScrollSection } from 'react-scroll-section'
 import PropTypes from 'prop-types'
 import { Heading, Container as C } from 'theme-ui'
 import { LinkAnimated } from '@components'
 
-const Container = ({ id, children, sx }) => (
+const Container = ({ id, children, sx, Background }) => (
   <ScrollSection id={id} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+    <Background />
     <C
       className="a"
       sx={{
@@ -29,9 +30,11 @@ Container.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   sx: PropTypes.object,
+  Background: PropTypes.node,
 }
 Container.defaultProps = {
   sx: {},
+  Background: Fragment,
 }
 
 const Header = ({ name, icon, label }) => (

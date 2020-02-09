@@ -17,3 +17,9 @@ export function convertHex(_hex, opacity = 100) {
   const result = `rgba(${r},${g},${b},${opacity})`
   return result
 }
+
+export const randomizePosition = max => {
+  const x = Math.floor(Math.random() * max.x)
+  const y = Math.floor(Math.random() * max.y)
+  return { x, y }
+}
