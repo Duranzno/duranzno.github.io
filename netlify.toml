@@ -3,7 +3,7 @@ ID = "Your_Site_ID"
 
 [build]
   publish = "public"
-  command = "yarn build"
+  command = "npm install yarn && yarn && yarn build"
   functions = "functions/"
   # If skip_processing = true, all other settings are ignored
   [build.processing]
