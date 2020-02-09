@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Fade } from 'react-awesome-reveal'
 import { StaticQuery, graphql } from 'gatsby'
 import { Text, Box, Link, Flex } from 'theme-ui'
-import { SocialLink } from '../micro'
+import { SocialLink } from '@components'
 
 const FooterContainer = styled.div`
   min-width: 320px;

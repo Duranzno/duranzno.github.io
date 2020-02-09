@@ -3,9 +3,9 @@ import React from 'react'
 import { Text, Image, Heading, Flex } from 'theme-ui'
 import { Fade } from 'react-awesome-reveal'
 import useInterval from '@use-it/interval'
+import { setLimitLength } from '@utils'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
 import { SocialLink } from '../SocialLink'
-import { setLimitLength } from '../../utils'
 
 const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
 const DELAY = 3000

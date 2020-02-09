@@ -3,8 +3,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { HelmetProvider } from 'react-helmet-async'
 import { ScrollingProvider } from 'react-scroll-section'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Header, Footer } from '../theme'
+import { Header } from './Header'
+import { Footer } from './Footer'
 
 const loadScript = src => {
   const tag = document.createElement('script')

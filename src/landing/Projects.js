@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { Box } from 'theme-ui'
-import { Section } from '../common'
-import { ProjectCard } from '../micro/ProjectCard'
+import { ProjectCard } from '@components/ProjectCard'
+import { Section } from '@common'
 
 const ProjectsComponent = data => {
   const { nodes: projects } = data.allContentfulProject

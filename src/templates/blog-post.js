@@ -3,10 +3,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { SEO, Layout } from '../components/common'
-import { get } from '../components/utils'
+import { get } from '@utils'
+import { SEO, Layout } from '@common'
 
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({ data }) => {
   const post = get(data, 'contentfulBlogPost')
   const siteTitle = get(data, 'site.siteMetadata.title')
 

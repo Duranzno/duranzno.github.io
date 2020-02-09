@@ -2,7 +2,7 @@ import React from 'react'
 import { Section as ScrollSection } from 'react-scroll-section'
 import PropTypes from 'prop-types'
 import { Heading, Container as C } from 'theme-ui'
-import { LinkAnimated } from '../micro'
+import { LinkAnimated } from '@components'
 
 const Container = ({ id, children, sx }) => (
   <ScrollSection id={id} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>

@@ -4,8 +4,8 @@ import { Box, Text } from 'theme-ui'
 
 import { StaticQuery, graphql } from 'gatsby'
 
-import { Section, SocialMediaTab } from '../common'
-import { ProfilePicture } from '../micro'
+import { ProfilePicture } from '@components'
+import { Section, SocialMediaTab } from '@common'
 
 export const IntroContent = ({ contentfulAbout: data }) => {
   const { profile, title, socialLinks } = data

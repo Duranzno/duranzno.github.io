@@ -59,6 +59,18 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@common": "src/common",
+          "@landing": "src/landing",
+          "@components": "src/micro",
+          "@utils": "src/utils",
+        },
+        extensions: ['js']
+      }
+    },
     // {
     //   resolve: 'gatsby-source-dev',
     //   options: {

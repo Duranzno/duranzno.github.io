@@ -1,8 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Fade } from 'react-awesome-reveal'
-import { Section } from '../common'
-import { CardContainer, Post, MorePosts } from '../micro/Post'
+import { CardContainer, Post, MorePosts } from '@components/Post'
+import { Section } from '@common'
 
 const parsePost = postFromGraphql => {
   const {

@@ -1,9 +1,9 @@
 /* eslint-disable  react/prefer-stateless-function */
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout, SEO } from '../components/common'
-import { Hero, ArticlePreview } from '../components/micro/Blog'
-import { get } from '../components/utils'
+import { get } from '@utils'
+import { Layout, SEO } from '@common'
+import { Hero, ArticlePreview } from '@components/Blog'
 
 // eslint-disable-next-line react/prop-types
 const BlogIndex = ({ location, data }) => {

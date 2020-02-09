@@ -4,13 +4,13 @@ import styled from '@emotion/styled'
 import { SectionLinks } from 'react-scroll-section'
 import { Flex, Image } from 'theme-ui'
 
-import { formatLinks } from '../utils/render'
-import { RouteLink } from '../micro'
+import { formatLinks } from '@utils'
+import { RouteLink } from '@components'
 import Logo from '../svg/logo.svg'
 
 const HeaderContainer = styled(Headroom)`
   .headroom--pinned {
-    background: ${props => props.theme.colors.background};
+    background: ${props => props.theme.colors.primary};
   }
 
   .headroom--unfixed {
@@ -18,7 +18,7 @@ const HeaderContainer = styled(Headroom)`
   }
   position: absolute;
   width: 100%;
-  max-height: 10vh;
+  max-height: 7vh;
 `
 export const Header = () => {
   return (
@@ -29,7 +29,7 @@ export const Header = () => {
           justifyContent: 'space-between',
           alignItems: 'center',
           px: [3, 5],
-          py: [3, 4],
+          py: [3],
         }}
       >
         <SectionLinks>
