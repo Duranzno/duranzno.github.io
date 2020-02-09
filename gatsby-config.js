@@ -71,12 +71,12 @@ module.exports = {
         extensions: ['js']
       }
     },
-    // {
-    //   resolve: 'gatsby-source-dev',
-    //   options: {
-    //     username: 'duranzno_',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-dev',
+      options: {
+        username: 'duranzno_',
+      },
+    },
     'gatsby-plugin-offline',
   ],
 }

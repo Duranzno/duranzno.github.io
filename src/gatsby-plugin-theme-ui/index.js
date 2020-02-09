@@ -1,8 +1,9 @@
+import { convertHex } from '@utils'
 import mainColors from '../data/colors'
 
 const { theme_color: primary } = mainColors
 const colors = {
-  text: '#000',
+  text: '#000000',
   background: '#f6f6f6',
   primary,
   secondary: '#306',
@@ -39,6 +40,18 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
       minWidth: '320px',
+      '::-webkit-scrollbar': {
+        width: '10px',
+      },
+      '::-webkit-scrollbar-thumb': {
+        WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.primary)}`,
+      },
+      '::-webkit-scrollbar-track': {
+        WebkitBoxShadow: `inset 0 0 20px ${convertHex(colors.text)}`,
+      },
+      '::-webkit-scrollbar-thumb:hover': {
+        WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.primary, 1)}`,
+      },
     },
     body: {
       minWidth: '320px',
