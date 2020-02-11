@@ -64,7 +64,7 @@ module.exports = {
       options: {
         alias: {
           "@common": "src/common",
-          "@landing": "src/landing",
+          "@sections": "src/sections",
           "@components": "src/micro",
           "@utils": "src/utils",
         },

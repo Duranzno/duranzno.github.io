@@ -21,11 +21,11 @@ export const Layout = ({ children, H }) => {
   return (
     <HelmetProvider>
       <ScrollingProvider>
-        {H}
         <Background>
+          {H}
           <main>{children}</main>
+          <Footer />
         </Background>
-        <Footer />
       </ScrollingProvider>
     </HelmetProvider>
   )

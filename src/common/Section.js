@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react'
+import React, { Fragment } from 'react'
 import { Section as ScrollSection } from 'react-scroll-section'
 import PropTypes from 'prop-types'
 import { Heading, Container as C } from 'theme-ui'
@@ -30,7 +30,7 @@ Container.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   sx: PropTypes.object,
-  Background: PropTypes.node,
+  Background: PropTypes.any,
 }
 Container.defaultProps = {
   sx: {},

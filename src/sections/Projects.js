@@ -43,10 +43,6 @@ const query = graphql`
             url
           }
         }
-        type {
-          iconifyName
-          name
-        }
       }
     }
   }

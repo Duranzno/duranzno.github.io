@@ -10,10 +10,10 @@ ID = "Your_Site_ID"
     skip_processing = false
   [build.processing.css]
     bundle = true
-    minify = false
+    minify = true
   [build.processing.js]
     bundle = true
-    minify = false
+    minify = true
   [build.processing.html]
     pretty_urls = true
   [build.processing.images]

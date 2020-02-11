@@ -8,6 +8,15 @@ export const get = (obj, path, defaultValue) => {
   const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/)
   return result === undefined || result === obj ? defaultValue : result
 }
+export function isEmpty(obj) {
+  if (typeof obj === 'object') {
+    return !Object.entries({}).length
+  }
+  if (Array.isArray(obj)) {
+    return !obj.length
+  }
+  return true
+}
 export function convertHex(_hex, opacity = 100) {
   const hex = _hex.replace('#', '')
   const r = parseInt(hex.substring(0, 2), 16)
