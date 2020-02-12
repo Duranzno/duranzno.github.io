@@ -1,4 +1,5 @@
 export * from './Background'
+export * from './common.styles.animations'
 export * from './CardContainer'
 export * from './Footer'
 export * from './Header'

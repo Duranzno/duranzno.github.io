@@ -20,6 +20,7 @@ const HeaderContainer = styled(Headroom)`
   position: absolute;
   width: 100%;
   height: 7vh;
+  z-index:10000;
 `
 export const Header = () => {
   return (

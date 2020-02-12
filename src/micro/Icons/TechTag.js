@@ -13,7 +13,7 @@ export const TechTag = props => {
     >
       <Button onClick={() => {}} variant="tag" sx={{ display: 'flex', flexWrap: 'nowrap', flexDirection: 'row' }}>
         <Text sx={{ mr: 2 }}>{name}</Text>
-        <IconifyIcon iconifyName={iconifyName} sx={{ width: 5, height: 5 }} />
+        <IconifyIcon iconifyName={iconifyName} sx={{ width: 5, height: 5, alignSelf: 'center' }} />
       </Button>
     </Link>
   )

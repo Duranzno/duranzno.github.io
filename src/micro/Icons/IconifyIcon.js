@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
-import React from 'react'
-import { jsx, Box, Styled, useThemeUI } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import styled from '@emotion/styled'
 
 const DIM = '75px'
@@ -10,6 +9,7 @@ const Icon = styled.span`
   color: ${props => props.theme.colors[props.color] || props.theme.colors.primary};
   top: ${props => (props.x ? `${props.x}px` : 'unset')};
   left: ${props => (props.y ? `${props.y}px` : 'unset')};
+  animation: ${props => props.sx&&props.sx.animation || 'unset'};
 `
 export const IconifyIcon = ({ iconifyName, x, y, sx = { size: 3 } }) => {
   const {

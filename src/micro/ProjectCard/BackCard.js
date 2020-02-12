@@ -7,9 +7,10 @@ import { setLimitLength } from '@utils'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
 import { IconifyLink } from '../Icons/IconifyLink'
 import { TechTag } from '../Icons/TechTag'
+import { EllipsisHeading } from '../Card'
 
 const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
-const DELAY = 3000
+const DELAY = 3000000000000
 const MAX_LENGTH = 175
 const createProjectLinks = project => {
   return [
@@ -31,10 +32,8 @@ export const BackCard = ({ project }) => {
   }, DELAY)
   const projectLinks = createProjectLinks(project)
   return (
-    <StyledCard
-      sx={{ pt: 3, px: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
-    >
-      <Heading as="h2">{project.name}</Heading>
+    <StyledCard className="styled-card" sx={{ pt: 3, px: 4, pb: 2 }}>
+      <EllipsisHeading as="h2">{project.name}</EllipsisHeading>
       <Heading as="h6">{new Date(project.publishedDate).getFullYear()}</Heading>
       <Flex sx={{ justifyContent: 'center' }}>
         {projectLinks.map(v => (
@@ -43,7 +42,13 @@ export const BackCard = ({ project }) => {
       </Flex>
 
       <Text sx={{ flexGrow: '1' }}>{limitLength(project.description)}</Text>
-      <Flex sx={{ justifyContent: 'space-between', alignItems: 'flex-end', alignSelf: 'flex-end' }}>
+      <Flex
+        sx={{
+          justifyContent: 'space-between',
+          alignSelf: 'stretch',
+          alignItems: 'center',
+        }}
+      >
         <Fade LightSpeed>{tagList[stackIndex]}</Fade>
         {project.logo && <Image src={project.logo.file.url} sx={{ size: 4 }} />}
       </Flex>

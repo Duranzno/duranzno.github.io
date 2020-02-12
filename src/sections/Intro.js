@@ -45,8 +45,9 @@ export const IntroContent = ({ contentfulAbout: data }) => {
               mt: [4, null],
               px: [1],
               textAlign: 'left  ',
-              fontSize: [2, 3, 4, 5],
+              fontSize: [4, 5],
               fontWeight: 'bold',
+              color: 'white',
             }}
           >
             {title}

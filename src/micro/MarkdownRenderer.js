@@ -7,7 +7,7 @@ import { Styled, Text } from 'theme-ui'
 const StyledLink = styled(Styled.a)`
   display: inline-block;
   transition: color 250ms, text-shadow 250ms;
-  color: black;
+  color: ${props => props.theme.colors.grey};
   cursor: pointer;
   position: relative;
   text-decoration: none;

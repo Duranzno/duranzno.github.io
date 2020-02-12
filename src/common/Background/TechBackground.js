@@ -4,16 +4,13 @@ import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import { randomizePosition, useWindowSize } from '@utils'
 import { IconifyIcon } from '@components'
-
-// import { UpDown, UpDownWide } from './Background.animations'
+import { upDownAnimation, upDownWideAnimation } from '../common.styles.animations'
 
 export const TechBackground = () => {
   const dimensions = useWindowSize()
   const {
     allContentfulStackLink: { edges },
   } = useStaticQuery(query)
-  // FIXME: FIX TECH BACKGROUND RANDOM GENERATION
-  console.log(dimensions)
   return (
     <Bg className="tech-background">
       {edges.map(e => {
@@ -21,9 +18,12 @@ export const TechBackground = () => {
           node: { id, iconifyName, name },
         } = e
         const { x, y } = randomizePosition(dimensions)
-        const iconifyProps = { id, iconifyName, name, url: name }
-        console.log(`${name} esta en la posición x:${x},y:${y}`)
-        return <IconifyIcon x={x} y={y} key={id} sx={{ size: 5 }} {...iconifyProps} />
+        const sx={ 
+          size: Math.floor(Math.random()*3)+4,
+          animation:Math.random() ? upDownAnimation : upDownWideAnimation 
+        }
+        const iconifyProps = { id, iconifyName, name, url: name,sx }
+        return <IconifyIcon animated x={x} y={y} key={id} {...iconifyProps} />
       })}
     </Bg>
   )

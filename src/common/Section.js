@@ -39,7 +39,7 @@ Container.defaultProps = {
 }
 
 const Header = ({ name, icon, label }) => (
-  <Heading color="secondaryDark" mb={4}>
+  <Heading color="white" mb={4} sx={{ width: 'fit-content' }} as="h1">
     <LinkAnimated selected>
       {name}
       {icon && (

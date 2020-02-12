@@ -7,6 +7,7 @@ const colors = {
   textWhite: '#EEE',
   background: '#f6f6f6',
   primary,
+  grey:'grey',
   black: 'black',
   secondary: '#306',
 }
@@ -144,6 +145,9 @@ export default {
     },
   },
   text: {
+    white: {
+      color: 'textWhite',
+    },
     small: {
       size: '16px',
       textTransform: 'uppercase',

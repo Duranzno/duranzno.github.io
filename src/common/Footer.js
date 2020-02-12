@@ -5,6 +5,33 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Text, Box, Link, Flex } from 'theme-ui'
 import { IconifyLink } from '@components'
 
+const FooterComponent = data => {
+  const { name, socialLinks } = data.contentfulAbout
+  const Links = socialLinks.map(({ id, ...rest }) => (
+    <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
+      <IconifyLink {...rest} sx={{ width: 4, height: 4 }} />
+    </Box>
+  ))
+  return (
+    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer" className="footer">
+      <FooterContainer>
+        <Fade left>
+          <TextFooter fontSize={[2, 3]}>
+            <span>{`${name}'s Portfolio - Powered by `}</span>
+            <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
+            <span role="img" aria-label="heart">
+              ❤️
+            </span>
+          </TextFooter>
+        </Fade>
+        <Fade right>
+          <Flex>{Links}</Flex>
+        </Fade>
+      </FooterContainer>
+    </Box>
+  )
+}
+export const Footer = () => <StaticQuery query={query} render={FooterComponent} />
 const FooterContainer = styled.div`
   min-width: 320px;
   max-width: 1366px;
@@ -36,34 +63,3 @@ const query = graphql`
     }
   }
 `
-const FooterComponent = data => {
-  const { name, socialLinks } = data.contentfulAbout
-  const Links = socialLinks.map(({ id, ...rest }) => (
-    <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
-      <IconifyLink {...rest} sx={{ width: 4, height: 4 }} />
-    </Box>
-  ))
-  return (
-    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer" className="footer">
-      <FooterContainer>
-        <Fade left>
-          <TextFooter fontSize={[2, 3]}>
-            <span>{`${name} Portfolio - Powered by `}</span>
-            <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
-            <span> and </span>
-            <Link href="https://www.contentful.com/" mr={1}>
-              Contentful
-            </Link>
-            <span role="img" aria-label="heart">
-              ❤️
-            </span>
-          </TextFooter>
-        </Fade>
-        <Fade right>
-          <Flex>{Links}</Flex>
-        </Fade>
-      </FooterContainer>
-    </Box>
-  )
-}
-export const Footer = () => <StaticQuery query={query} render={FooterComponent} />

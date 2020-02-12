@@ -31,22 +31,26 @@ const upDownWide = keyframes`
   }
 `
 
-const upDownAnimation = css`
+export const upDownAnimation = css`
   ${upDown} 4s ease-in-out infinite alternate;
 `
 
-const upDownWideAnimation = css`
+export const upDownWideAnimation = css`
   ${upDownWide} 18s ease-in-out infinite alternate;
 `
 
 export const UpDown = styled.div`
   animation: ${upDownAnimation};
   position: absolute;
+  width: 100vw;
+  height: 100vh;
 `
 
 export const UpDownWide = styled.div`
   animation: ${upDownWideAnimation};
   position: absolute;
+  width: 100vw;
+  height: 100vh;
 `
 
 export const waveAnimation = length => css`

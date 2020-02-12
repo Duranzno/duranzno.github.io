@@ -16,7 +16,7 @@ const AboutComponent = data => {
     <Section.Container id="about" sx={{ px: 5 }}>
       <Section.Header name="About" icon="✍️" label="About" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
+        <Box width={[1, 1, 4 / 6]} px={[1, 2, 5]} sx={{ color: 'white', fontWeight: 'bolder' }}>
           <Fade bottom>
             <ReactMarkdown source={rawMarkdownBody} renderers={MarkdownRenderers} />
           </Fade>
