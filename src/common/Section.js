@@ -4,16 +4,16 @@ import PropTypes from 'prop-types'
 import { Heading, Container as C } from 'theme-ui'
 import { LinkAnimated } from '@components'
 
-const Container = ({ id, children, sx, Background }) => (
+const Container = ({ id, children, sx, background }) => (
   <ScrollSection id={id} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-    <Background />
     <C
-      className="a"
+      className="container-scrolled"
       sx={{
         minHeight: '100vh',
         minWidth: '320px',
         margin: 'auto',
         flex: '1 1 auto',
+        zIndex: '100',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -23,6 +23,7 @@ const Container = ({ id, children, sx, Background }) => (
     >
       {children}
     </C>
+    {background}
   </ScrollSection>
 )
 
@@ -30,11 +31,11 @@ Container.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   sx: PropTypes.object,
-  Background: PropTypes.any,
+  background: PropTypes.any,
 }
 Container.defaultProps = {
   sx: {},
-  Background: Fragment,
+  background: <></>,
 }
 
 const Header = ({ name, icon, label }) => (

@@ -44,7 +44,7 @@ const FooterComponent = data => {
     </Box>
   ))
   return (
-    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer">
+    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer" className="footer">
       <FooterContainer>
         <Fade left>
           <TextFooter fontSize={[2, 3]}>

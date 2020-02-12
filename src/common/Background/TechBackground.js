@@ -13,17 +13,17 @@ export const TechBackground = () => {
     allContentfulStackLink: { edges },
   } = useStaticQuery(query)
   // FIXME: FIX TECH BACKGROUND RANDOM GENERATION
+  console.log(dimensions)
   return (
-    <Bg>
+    <Bg className="tech-background">
       {edges.map(e => {
         const {
           node: { id, iconifyName, name },
         } = e
         const { x, y } = randomizePosition(dimensions)
-        const choose = !!Math.random()
-        return <IconifyIcon x={x} id={id} key={id} y={y} name={name} iconifyName={iconifyName} url={name} />
-        // return choose ? <UpDown key={id}>{icon}</UpDown> : <UpDownWide key={id}>{icon}</UpDownWide>
-        // return icon
+        const iconifyProps = { id, iconifyName, name, url: name }
+        console.log(`${name} esta en la posición x:${x},y:${y}`)
+        return <IconifyIcon x={x} y={y} key={id} sx={{ size: 5 }} {...iconifyProps} />
       })}
     </Bg>
   )
@@ -43,8 +43,8 @@ const query = graphql`
 `
 
 const Bg = styled.div`
+  height: 100vh;
   position: absolute;
-  height: 100%;
   width: 100vw;
-  z-index: -1;
+  filter: blur(3px);
 `

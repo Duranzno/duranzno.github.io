@@ -19,7 +19,7 @@ const HeaderContainer = styled(Headroom)`
   }
   position: absolute;
   width: 100%;
-  max-height: 7vh;
+  height: 7vh;
 `
 export const Header = () => {
   return (
@@ -50,9 +50,18 @@ export const Header = () => {
                     }}
                   />
                 )
-                const navLinks = links.map(({ name, value }) => (
-                  <RouteLink key={name} onClick={value.onClick} selected={value.selected} name={name} />
-                ))
+                const navLinks = links.map(({ name, value }) =>
+                  value === 'writing' ? (
+                    <RouteLink
+                      key={name}
+                      onClick={() => navigate(`${origin}/blog`)}
+                      selected={value.selected}
+                      name={name}
+                    />
+                  ) : (
+                    <RouteLink key={name} onClick={value.onClick} selected={value.selected} name={name} />
+                  )
+                )
                 return (
                   <>
                     {homeLink}
@@ -67,9 +76,9 @@ export const Header = () => {
     </Location>
   )
 }
-const setDefaultLinks = location => ({
-  home: { onClick: () => navigate(`${location}#home`), selected: true },
-  about: { onClick: () => navigate(`${location}#about`), selected: false },
-  projects: { onClick: () => navigate(`${location}#projects`), selected: false },
-  writing: { onClick: () => navigate(`${location}#writing`), selected: false },
+const setDefaultLinks = origin => ({
+  home: { onClick: () => navigate(`${origin}#home`), selected: true },
+  about: { onClick: () => navigate(`${origin}#about`), selected: false },
+  projects: { onClick: () => navigate(`${origin}#projects`), selected: false },
+  writing: { onClick: () => navigate(`${origin}/blog`), selected: false },
 })

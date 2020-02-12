@@ -3,29 +3,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 // import { get } from '@utils'
 import { Layout } from '@common'
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 import { TechTag } from '../micro/Icons/TechTag'
+import { TechBackground } from '../common/Background/TechBackground'
 // eslint-disable-next-line react/prop-types
 const BlogIndex = ({ data }) => {
   // const siteTitle = get(data, 'site.siteMetadata.title')
   // const posts = get(data, 'allContentfulBlogPost.edges')
-  return (
-    <Layout>
-      <Box
-        sx={{
-          minWidth: '100vw',
-          minHeight: '100vh',
-          display: 'flex',
-          alignContent: 'center',
-          alignItems: 'center',
-          background: 'black',
-          justifyContent: 'center',
-        }}
-      >
-        <TechTag iconifyName="logos:redux" name="Redux" />
-      </Box>
-    </Layout>
-  )
+  return <Layout />
 }
 export default BlogIndex
 
