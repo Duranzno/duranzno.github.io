@@ -2,11 +2,11 @@
 	"folders": [
     // {
     //   "name": "examples",
-		// 	"path": "/home/ale/Development/duranzno.github.io/examples"
+		// 	"path": "/home/ale/Development/portfolio/examples"
     // },
 		{
       "name": "main",
-			"path": "/home/ale/Development/duranzno.github.io"
+			"path": "/home/ale/Development/portfolio/repo"
 		}
   ],
   "settings": {
