@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react"
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { navigate, Location } from '@reach/router'
-import Headroom from 'react-headroom'
-import styled from '@emotion/styled'
-import { SectionLinks } from 'react-scroll-section'
-import { Flex, Image } from 'theme-ui'
-import { formatLinks, isEmpty } from '@utils'
-import { RouteLink } from '@components'
-import Logo from '../svg/logo.svg'
+import { navigate, Location } from "@reach/router"
+import Headroom from "react-headroom"
+import styled from "@emotion/styled"
+import { SectionLinks } from "react-scroll-section"
+import { Flex, Image } from "theme-ui"
+import { formatLinks, isEmpty } from "@utils"
+import { RouteLink } from "@components"
+import Logo from "../svg/logo.svg"
 
 const HeaderContainer = styled(Headroom)`
   .headroom--pinned {
@@ -20,7 +20,7 @@ const HeaderContainer = styled(Headroom)`
   position: absolute;
   width: 100%;
   height: 7vh;
-  z-index:10000;
+  z-index: 10000;
 `
 export const Header = () => {
   return (
@@ -29,9 +29,9 @@ export const Header = () => {
         <HeaderContainer>
           <Flex
             sx={{
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              alignItems: 'center',
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              alignItems: "center",
               px: [3, 5],
               py: [3],
             }}
@@ -39,7 +39,9 @@ export const Header = () => {
             <SectionLinks>
               {({ allLinks }) => {
                 const defaultLinks = setDefaultLinks(origin)
-                const { home, links } = formatLinks(isEmpty(allLinks) ? defaultLinks : allLinks)
+                const { home, links } = formatLinks(
+                  isEmpty(allLinks) ? defaultLinks : allLinks
+                )
                 const homeLink = home && (
                   <Image
                     sx={{ width: 30 }}
@@ -47,12 +49,12 @@ export const Header = () => {
                     alt="Portfolio Logo"
                     onClick={home.onClick}
                     style={{
-                      cursor: 'pointer',
+                      cursor: "pointer",
                     }}
                   />
                 )
                 const navLinks = links.map(({ name, value }) =>
-                  value === 'writing' ? (
+                  value === "writing" ? (
                     <RouteLink
                       key={name}
                       onClick={() => navigate(`${origin}/blog`)}
@@ -60,7 +62,12 @@ export const Header = () => {
                       name={name}
                     />
                   ) : (
-                    <RouteLink key={name} onClick={value.onClick} selected={value.selected} name={name} />
+                    <RouteLink
+                      key={name}
+                      onClick={value.onClick}
+                      selected={value.selected}
+                      name={name}
+                    />
                   )
                 )
                 return (

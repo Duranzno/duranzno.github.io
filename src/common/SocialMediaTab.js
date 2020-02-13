@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Box } from 'theme-ui'
-import { IconifyLink } from '@components'
+import React from "react"
+import PropTypes from "prop-types"
+import { Box } from "theme-ui"
+import { IconifyLink } from "@components"
 
 export const SocialMediaTab = ({ socialLinks, sx }) => {
   return (

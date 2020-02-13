@@ -1,10 +1,13 @@
 /* eslint-disable no-undef */
-import React from 'react'
-import styled from '@emotion/styled'
-import { graphql, useStaticQuery } from 'gatsby'
-import { randomizePosition, useWindowSize } from '@utils'
-import { IconifyIcon } from '@components'
-import { upDownAnimation, upDownWideAnimation } from '../common.styles.animations'
+import React from "react"
+import styled from "@emotion/styled"
+import { graphql, useStaticQuery } from "gatsby"
+import { randomizePosition, useWindowSize } from "@utils"
+import { IconifyIcon } from "@components"
+import {
+  upDownAnimation,
+  upDownWideAnimation,
+} from "../common.styles.animations"
 
 export const TechBackground = () => {
   const dimensions = useWindowSize()
@@ -18,11 +21,11 @@ export const TechBackground = () => {
           node: { id, iconifyName, name },
         } = e
         const { x, y } = randomizePosition(dimensions)
-        const sx={ 
-          size: Math.floor(Math.random()*3)+4,
-          animation:Math.random() ? upDownAnimation : upDownWideAnimation 
+        const sx = {
+          size: Math.floor(Math.random() * 3) + 4,
+          animation: Math.random() ? upDownAnimation : upDownWideAnimation,
         }
-        const iconifyProps = { id, iconifyName, name, url: name,sx }
+        const iconifyProps = { id, iconifyName, name, url: name, sx }
         return <IconifyIcon animated x={x} y={y} key={id} {...iconifyProps} />
       })}
     </Bg>

@@ -1,3 +1,3 @@
-require('typeface-rubik')
-require('typeface-space-mono')
-require('typeface-karla')
+require("typeface-rubik")
+require("typeface-space-mono")
+require("typeface-karla")

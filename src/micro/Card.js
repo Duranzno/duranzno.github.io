@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
-import { Heading } from 'theme-ui'
+import styled from "@emotion/styled"
+import { Heading } from "theme-ui"
 
 export const EllipsisHeading = styled(Heading)`
   overflow: hidden;

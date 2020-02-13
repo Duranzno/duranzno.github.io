@@ -1,23 +1,26 @@
-import React, { Fragment } from 'react'
-import { Section as ScrollSection } from 'react-scroll-section'
-import PropTypes from 'prop-types'
-import { Heading, Container as C } from 'theme-ui'
-import { LinkAnimated } from '@components'
+import React, { Fragment } from "react"
+import { Section as ScrollSection } from "react-scroll-section"
+import PropTypes from "prop-types"
+import { Heading, Container as C } from "theme-ui"
+import { LinkAnimated } from "@components"
 
 const Container = ({ id, children, sx, background }) => (
-  <ScrollSection id={id} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+  <ScrollSection
+    id={id}
+    style={{ position: "relative", display: "flex", justifyContent: "center" }}
+  >
     <C
       className="container-scrolled"
       sx={{
-        minHeight: '100vh',
-        minWidth: '320px',
-        margin: 'auto',
-        flex: '1 1 auto',
-        zIndex: '100',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        scrollBehavior: 'smooth',
+        minHeight: "100vh",
+        minWidth: "320px",
+        margin: "auto",
+        flex: "1 1 auto",
+        zIndex: "100",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        scrollBehavior: "smooth",
         ...sx,
       }}
     >
@@ -39,11 +42,11 @@ Container.defaultProps = {
 }
 
 const Header = ({ name, icon, label }) => (
-  <Heading color="white" mb={4} sx={{ width: 'fit-content' }} as="h1">
+  <Heading color="white" mb={4} sx={{ width: "fit-content" }} as="h1">
     <LinkAnimated selected>
       {name}
       {icon && (
-        <span role="img" aria-label={label} style={{ marginLeft: '10px' }}>
+        <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
           {icon}
         </span>
       )}
@@ -57,8 +60,8 @@ Header.propTypes = {
   label: PropTypes.string,
 }
 Header.defaultProps = {
-  icon: '',
-  label: '',
+  icon: "",
+  label: "",
 }
 
 export const Section = {

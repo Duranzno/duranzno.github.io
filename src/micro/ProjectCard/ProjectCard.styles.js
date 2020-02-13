@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import styled from '@emotion/styled'
-import { Card } from 'theme-ui'
+import PropTypes from "prop-types"
+import styled from "@emotion/styled"
+import { Card } from "theme-ui"
 
 export const StyledCard = styled(Card)`
   display: flex;
@@ -17,7 +17,7 @@ export const StyledCard = styled(Card)`
   border-radius: 8px;
   background: ${props => props.theme.colors.background};
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
+  cursor: ${props => (props.onClick ? "pointer" : "default")};
 
   &:hover {
     top: -10px;
@@ -25,16 +25,16 @@ export const StyledCard = styled(Card)`
   }
 `
 export const ProjectDefaultProps = {
-  name: '',
-  description: '',
-  id: '',
-  blurb: '',
-  projectUrl: '',
-  publishedDate: '',
-  repositoryUrl: '',
+  name: "",
+  description: "",
+  id: "",
+  blurb: "",
+  projectUrl: "",
+  publishedDate: "",
+  repositoryUrl: "",
   stack: [],
-  logo: { file: { url: '' } },
-  screenshots: [{ file: { url: '' } }],
+  logo: { file: { url: "" } },
+  screenshots: [{ file: { url: "" } }],
   type: [],
 }
 export const ProjectPropTypes = {

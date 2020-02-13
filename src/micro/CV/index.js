@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Box } from "theme-ui";
+import styled from "@emotion/styled"
+import { Box } from "theme-ui"
 
 export const Body = styled(Box)`
   background: #fff;

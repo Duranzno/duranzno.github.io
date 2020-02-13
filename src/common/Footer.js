@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { Fade } from 'react-awesome-reveal'
-import { StaticQuery, graphql } from 'gatsby'
-import { Text, Box, Link, Flex } from 'theme-ui'
-import { IconifyLink } from '@components'
+import React from "react"
+import styled from "@emotion/styled"
+import { Fade } from "react-awesome-reveal"
+import { StaticQuery, graphql } from "gatsby"
+import { Text, Box, Link, Flex } from "theme-ui"
+import { IconifyLink } from "@components"
 
 const FooterComponent = data => {
   const { name, socialLinks } = data.contentfulAbout
@@ -13,7 +13,11 @@ const FooterComponent = data => {
     </Box>
   ))
   return (
-    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer" className="footer">
+    <Box
+      sx={{ p: 3, backgroundColor: "secondary" }}
+      as="footer"
+      className="footer"
+    >
       <FooterContainer>
         <Fade left>
           <TextFooter fontSize={[2, 3]}>
@@ -31,7 +35,9 @@ const FooterComponent = data => {
     </Box>
   )
 }
-export const Footer = () => <StaticQuery query={query} render={FooterComponent} />
+export const Footer = () => (
+  <StaticQuery query={query} render={FooterComponent} />
+)
 const FooterContainer = styled.div`
   min-width: 320px;
   max-width: 1366px;

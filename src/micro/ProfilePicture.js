@@ -1,5 +1,5 @@
-import { Image } from 'theme-ui'
-import styled from '@emotion/styled'
+import { Image } from "theme-ui"
+import styled from "@emotion/styled"
 
 export const ProfilePicture = styled(Image)`
   border-radius: 50%;

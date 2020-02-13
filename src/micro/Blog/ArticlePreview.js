@@ -1,9 +1,9 @@
 /* eslint-disable react/no-danger */
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
-import { PreviewTitle, Tag } from './Blog.styles'
+import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
+import { PreviewTitle, Tag } from "./Blog.styles"
 
 export const ArticlePreview = ({ article }) => (
   <div>
