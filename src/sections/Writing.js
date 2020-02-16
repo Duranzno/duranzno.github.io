@@ -19,7 +19,7 @@ export const Writing = ({ location: { origin } }) => {
       <Section.Header name="Writing" icon="✍️" label="writing" />
       <CardContainer sx={{ minWidth: '300px' }}>
         {posts.map(({ Component, ...rest }) => (
-          <Fade bottom key={rest.id}>
+          <Fade bottom key={rest.id} triggerOnce>
             <Component {...rest} key={rest.id} />
           </Fade>
         ))}
@@ -56,8 +56,7 @@ const parsePost = origin => postFromGraphql => {
     Component: Post,
   }
 }
-const edgeToArray = data =>
-  data.allContentfulBlogPost.edges.map(edge => edge.node)
+const edgeToArr = data => data.allContentfulBlogPost.edges.map(edge => edge.node)
 const query = graphql`
   query WritingQuery {
     allContentfulBlogPost(

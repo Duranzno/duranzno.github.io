@@ -1,5 +1,5 @@
 import { convertHex } from '@utils'
-import mainColors from '../data/colors'
+import mainColors from '../gatsby/colors'
 
 const { theme_color: primary } = mainColors
 const colors = {

@@ -4,11 +4,7 @@ import { Text, Image, Heading, Flex } from 'theme-ui'
 import { Fade } from 'react-awesome-reveal'
 import useInterval from '@use-it/interval'
 import { setLimitLength } from '@utils'
-import {
-  ProjectPropTypes,
-  StyledCard,
-  ProjectDefaultProps,
-} from './ProjectCard.styles'
+import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
 import { IconifyLink } from '../Icons/IconifyLink'
 import { TechTag } from '../Icons/TechTag'
 import { EllipsisHeading } from '../Card'
@@ -34,9 +30,7 @@ const createProjectLinks = project => {
 }
 export const BackCard = ({ project }) => {
   const [stackIndex, setStackIndex] = useState(0)
-  const [tagList] = useState(
-    project.stack.map(v => <TechTag key={v.name} {...v} />)
-  )
+  const [tagList] = useState(project.stack.map(v => <TechTag key={v.name} {...v} />))
   const limitLength = setLimitLength(MAX_LENGTH)
   useInterval(() => {
     setStackIndex(stackIndex === project.stack.length - 1 ? 0 : stackIndex + 1)
@@ -61,13 +55,7 @@ export const BackCard = ({ project }) => {
         }}
       >
         <Fade LightSpeed>{tagList[stackIndex]}</Fade>
-        {project.logo && (
-          <Image
-            src={project.logo.file.url}
-            alt={project.name}
-            sx={{ size: 4 }}
-          />
-        )}
+        {project.logo && <Image src={project.logo.file.url} alt={project.name} sx={{ size: 4 }} />}
       </Flex>
     </StyledCard>
   )

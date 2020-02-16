@@ -13,13 +13,9 @@ const FooterComponent = data => {
     </Box>
   ))
   return (
-    <Box
-      sx={{ p: 3, backgroundColor: 'secondary' }}
-      as="footer"
-      className="footer"
-    >
+    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer" className="footer">
       <FooterContainer>
-        <Fade left>
+        <Fade left triggerOnce>
           <TextFooter fontSize={[2, 3]}>
             <span>{`${name}'s Portfolio - Powered by `}</span>
             <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
@@ -28,16 +24,14 @@ const FooterComponent = data => {
             </span>
           </TextFooter>
         </Fade>
-        <Fade right>
+        <Fade right triggerOnce>
           <Flex>{Links}</Flex>
         </Fade>
       </FooterContainer>
     </Box>
   )
 }
-export const Footer = () => (
-  <StaticQuery query={query} render={FooterComponent} />
-)
+export const Footer = () => <StaticQuery query={query} render={FooterComponent} />
 const FooterContainer = styled.div`
   min-width: 320px;
   max-width: 1366px;

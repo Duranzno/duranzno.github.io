@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Text } from 'theme-ui'
-import Img from 'gatsby-image'
 
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -25,10 +24,7 @@ export const IntroContent = ({ contentfulAbout: data }) => {
           display: 'grid',
           gridGap: 1,
           gridTemplateColumns: ['unset', 'repeat(2, 1fr) 30% repeat(2, 1fr)'],
-          gridTemplateRows: [
-            'repeat(3,1fr)',
-            'repeat(2, 1fr) 30% repeat(2, 1fr)',
-          ],
+          gridTemplateRows: ['repeat(3,1fr)', 'repeat(2, 1fr) 30% repeat(2, 1fr)'],
           alignItems: 'center',
           justifyContent: 'center',
         }}
@@ -83,7 +79,7 @@ const query = graphql`
       profile {
         title
         fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       aboutMe {

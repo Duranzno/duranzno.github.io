@@ -39,10 +39,10 @@ module.exports = {
         head: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options,
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options,
+    // },
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
