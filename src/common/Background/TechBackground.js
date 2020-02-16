@@ -1,19 +1,20 @@
 /* eslint-disable no-undef */
-import React from "react"
-import styled from "@emotion/styled"
-import { graphql, useStaticQuery } from "gatsby"
-import { randomizePosition, useWindowSize } from "@utils"
-import { IconifyIcon } from "@components"
+import React from 'react'
+import styled from '@emotion/styled'
+import { graphql, useStaticQuery } from 'gatsby'
+import { randomizePosition, useWindowSize } from '@utils'
+import { IconifyIcon } from '@components'
 import {
   upDownAnimation,
   upDownWideAnimation,
-} from "../common.styles.animations"
+} from '../common.styles.animations'
 
 export const TechBackground = () => {
   const dimensions = useWindowSize()
   const {
     allContentfulStackLink: { edges },
   } = useStaticQuery(query)
+  return null
   return (
     <Bg className="tech-background">
       {edges.map(e => {

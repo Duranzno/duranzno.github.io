@@ -1,1 +1,1 @@
-export * from "./ResumeLayout"
+export * from './ResumeLayout'

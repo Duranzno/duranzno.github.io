@@ -1,22 +1,22 @@
-import PropTypes from "prop-types"
-import { Box } from "theme-ui"
-import styled from "@emotion/styled"
+import PropTypes from 'prop-types'
+import { Box } from 'theme-ui'
+import styled from '@emotion/styled'
 
-const BORDER_SPACING = "20px"
-const BORDER_RADIUS = "8px"
+const BORDER_SPACING = '20px'
+const BORDER_RADIUS = '8px'
 
 const BORDER_PATH_MAP = {
-  "top-left": `polygon(0 0%, 100% 0%, calc(100% - ${BORDER_SPACING}) 100%, 0% 100%);`,
-  "top-right": `polygon(0 0%, 100% 0%, 100% 100%, ${BORDER_SPACING} 100%);`,
-  "bottom-right": `polygon(${BORDER_SPACING} 0%, 100% 0%, 100% 100%, 0% 100%);`,
-  "bottom-left": `polygon(0 0%, calc(100% - ${BORDER_SPACING}) 0%, 100% 100%, 0% 100%);`,
+  'top-left': `polygon(0 0%, 100% 0%, calc(100% - ${BORDER_SPACING}) 100%, 0% 100%);`,
+  'top-right': `polygon(0 0%, 100% 0%, 100% 100%, ${BORDER_SPACING} 100%);`,
+  'bottom-right': `polygon(${BORDER_SPACING} 0%, 100% 0%, 100% 100%, 0% 100%);`,
+  'bottom-left': `polygon(0 0%, calc(100% - ${BORDER_SPACING}) 0%, 100% 100%, 0% 100%);`,
 }
 
 const BORDER_RADIUS_MAP = {
-  "top-left": `${BORDER_RADIUS} 0 0 0`,
-  "top-right": `0 ${BORDER_RADIUS} 0 0`,
-  "bottom-right": `0 0 ${BORDER_RADIUS} 0`,
-  "bottom-left": `0 0 0 ${BORDER_RADIUS}`,
+  'top-left': `${BORDER_RADIUS} 0 0 0`,
+  'top-right': `0 ${BORDER_RADIUS} 0 0`,
+  'bottom-right': `0 0 ${BORDER_RADIUS} 0`,
+  'bottom-left': `0 0 0 ${BORDER_RADIUS}`,
 }
 
 export const ImageSubtitle = styled(Box)`
@@ -31,7 +31,7 @@ export const ImageSubtitle = styled(Box)`
   ${props => props.y}: 0;
   
   ${props =>
-    props.x === "left"
+    props.x === 'left'
       ? `padding-right: ${BORDER_SPACING};`
       : `padding-left: ${BORDER_SPACING};`}
   clip-path: ${props => BORDER_PATH_MAP[`${props.y}-${props.x}`]};
@@ -42,13 +42,13 @@ export const ImageSubtitle = styled(Box)`
 `
 
 ImageSubtitle.propTypes = {
-  x: PropTypes.oneOf(["left", "right"]),
-  y: PropTypes.oneOf(["top", "bottom"]),
+  x: PropTypes.oneOf(['left', 'right']),
+  y: PropTypes.oneOf(['top', 'bottom']),
   round: PropTypes.bool,
 }
 
 ImageSubtitle.defaultProps = {
-  x: "left",
-  y: "top",
+  x: 'left',
+  y: 'top',
   round: false,
 }

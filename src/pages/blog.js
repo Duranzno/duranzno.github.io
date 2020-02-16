@@ -1,11 +1,11 @@
 /* eslint-disable  react/prefer-stateless-function */
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 // import { get } from '@utils'
-import { Layout } from "@common"
-import { Box, Flex } from "theme-ui"
-import { TechTag } from "../micro/Icons/TechTag"
-import { TechBackground } from "../common/Background/TechBackground"
+import { Layout } from '@common'
+import { Box, Flex } from 'theme-ui'
+import { TechTag } from '../micro/Icons/TechTag'
+import { TechBackground } from '../common/Background/TechBackground'
 // eslint-disable-next-line react/prop-types
 const BlogIndex = ({ data }) => {
   // const siteTitle = get(data, 'site.siteMetadata.title')

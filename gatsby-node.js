@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
   )
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve("./src/templates/blog-post.js")
+    const blogPost = path.resolve('./src/templates/blog-post.js')
     resolve(
       query.then(result => {
         if (result.errors) {

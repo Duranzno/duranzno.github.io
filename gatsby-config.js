@@ -11,8 +11,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-netlify`,
+    'gatsby-plugin-robots-txt',
     {
       resolve: "gatsby-plugin-favicon",
       options: {

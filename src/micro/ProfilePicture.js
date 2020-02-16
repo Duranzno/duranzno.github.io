@@ -1,10 +1,30 @@
-import { Image } from "theme-ui"
-import styled from "@emotion/styled"
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import PropTypes from 'prop-types'
 
-export const ProfilePicture = styled(Image)`
-  border-radius: 50%;
-  transition: all 0.25s ease-out;
-  align-self: center;
-  justify-self: center;
-  /* border: medium solid; */
-`
+import Img from 'gatsby-image'
+
+export const ProfilePicture = ({ fluid, alt }) => (
+  <Img
+    fluid={fluid}
+    alt={alt}
+    fadeIn
+    backgroundColor
+    sx={{
+      gridArea: ['1', '3 / 3 / 4 / 4'],
+      justifyContent: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      size: [6, '200px', 7],
+      border: 'medium solid',
+      borderRadius: '50%',
+      transition: 'all 0.25s ease-out',
+      alignSelf: 'center',
+      justifySelf: 'center',
+    }}
+  />
+)
+ProfilePicture.propTypes = {
+  fluid: PropTypes.any.isRequired,
+  alt: PropTypes.string.isRequired,
+}

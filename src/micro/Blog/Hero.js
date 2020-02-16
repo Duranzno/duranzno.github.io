@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Img from "gatsby-image"
-import styled from "@emotion/styled"
-import { Text } from "theme-ui"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
+import styled from '@emotion/styled'
+import { Text } from 'theme-ui'
 
 export const Hero = ({ data }) => (
   <HeroContainer>

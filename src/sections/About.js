@@ -1,10 +1,10 @@
-import React from "react"
-import ReactMarkdown from "react-markdown/with-html"
-import { Fade } from "react-awesome-reveal"
-import { graphql, StaticQuery } from "gatsby"
-import { Flex, Box } from "theme-ui"
-import { MarkdownRenderers } from "@components"
-import { Section } from "@common"
+import React from 'react'
+import ReactMarkdown from 'react-markdown/with-html'
+import { Fade } from 'react-awesome-reveal'
+import { graphql, StaticQuery } from 'gatsby'
+import { Flex, Box } from 'theme-ui'
+import { MarkdownRenderers } from '@components'
+import { Section } from '@common'
 
 const AboutComponent = data => {
   const {
@@ -19,7 +19,7 @@ const AboutComponent = data => {
         <Box
           width={[1, 1, 4 / 6]}
           px={[1, 2, 5]}
-          sx={{ color: "white", fontWeight: "bolder" }}
+          sx={{ color: 'white', fontWeight: 'bolder' }}
         >
           <Fade bottom>
             <ReactMarkdown

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 export const LinkAnimated = styled.div`
   text-decoration: none;
@@ -10,10 +10,10 @@ export const LinkAnimated = styled.div`
     props.selected &&
     `border-bottom:  5px solid ${props.theme.colors.primary}`};
   transition: 0.4s;
-  cursor: ${props => (props.onClick ? "pointer" : "default")};
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     width: 0;

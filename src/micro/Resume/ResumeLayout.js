@@ -1,7 +1,7 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 export const Layout = styled.body`
-  font-family: "Khula", Arial, sans-serif;
+  font-family: 'Khula', Arial, sans-serif;
   background: #eee;
   @media print {
     background: #fff;

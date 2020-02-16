@@ -1,8 +1,8 @@
-import React from "react"
-import { SectionLink } from "react-scroll-section"
-import styled from "@emotion/styled"
-import PropTypes from "prop-types"
-import { Styled, Text } from "theme-ui"
+import React from 'react'
+import { SectionLink } from 'react-scroll-section'
+import styled from '@emotion/styled'
+import PropTypes from 'prop-types'
+import { Styled, Text } from 'theme-ui'
 
 const StyledLink = styled(Styled.a)`
   display: inline-block;
@@ -18,7 +18,7 @@ const StyledLink = styled(Styled.a)`
     bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
-    content: "";
+    content: '';
     width: 100%;
     height: 3px;
     background-color: ${props => props.theme.colors.primary};
@@ -52,7 +52,7 @@ const MarkdownListItem = styled(Styled.li)`
 `
 
 const MarkdownLink = ({ href, children }) => {
-  const isInnerLink = href.startsWith("#")
+  const isInnerLink = href.startsWith('#')
   return isInnerLink ? (
     <SectionLink section={href.substring(1, href.length)}>
       {({ onClick }) => <StyledLink onClick={onClick}>{children}</StyledLink>}

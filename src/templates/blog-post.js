@@ -1,24 +1,24 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable react/prop-types */
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import { get } from "@utils"
-import { SEO, Layout } from "@common"
+import { get } from '@utils'
+import { SEO, Layout } from '@common'
 
 const BlogPostTemplate = ({ data }) => {
-  const post = get(data, "contentfulBlogPost")
-  const siteTitle = get(data, "site.siteMetadata.title")
+  const post = get(data, 'contentfulBlogPost')
+  const siteTitle = get(data, 'site.siteMetadata.title')
 
   return (
     <Layout>
-      <div style={{ background: "#fff" }}>
+      <div style={{ background: '#fff' }}>
         <SEO title={`${post.title} | ${siteTitle}`} />
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
           <p
             style={{
-              display: "block",
+              display: 'block',
             }}
           >
             {post.publishDate}

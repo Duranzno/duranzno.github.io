@@ -46,7 +46,8 @@ module.exports = async ({ graphql, actions }) => {
   const stacksQuery = await graphql(query.data.stacks)
   const stacks = stacksQuery.data.allContentfulStackLink.edges
   stacks.forEach(stack => {
-    const stackPagination = basePath === '/' ? `/tag/${name}` : `/${basePath}/tag/${name}`
+    const stackPagination =
+      basePath === '/' ? `/tag/${name}` : `/${basePath}/tag/${name}`
     const name = stack.node.name.toLowerCase()
 
     paginate({

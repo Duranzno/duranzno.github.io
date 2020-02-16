@@ -1,17 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Flex, Box, Heading } from "theme-ui"
-import { Card } from "./Post.styles"
-import { IconifyLink } from "../Icons/IconifyLink"
-import { EllipsisHeading } from "../Card"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Flex, Box, Heading } from 'theme-ui'
+import { Card } from './Post.styles'
+import { IconifyLink } from '../Icons/IconifyLink'
+import { EllipsisHeading } from '../Card'
 export const MorePosts = ({ number, url }) => (
   // eslint-disable-next-line no-undef
-  <Card onClick={() => window.open(url, "_blank")} sx={{ px: 4, pb: 4, pt: 2 }}>
+  <Card onClick={() => window.open(url, '_blank')} sx={{ px: 4, pb: 4, pt: 2 }}>
     <Flex
       sx={{
-        flexDirection: "column",
-        height: "100%",
-        justifyContent: "space-between",
+        flexDirection: 'column',
+        height: '100%',
+        justifyContent: 'space-between',
       }}
     >
       <Box>
@@ -43,5 +43,5 @@ MorePosts.propTypes = {
 }
 
 MorePosts.defaultProps = {
-  number: "many",
+  number: 'many',
 }

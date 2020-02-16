@@ -1,10 +1,10 @@
-import React from "react"
-import { Link } from "theme-ui"
-import Tippy from "@tippy.js/react"
-import styled from "@emotion/styled"
-import PropTypes from "prop-types"
-import "tippy.js/dist/tippy.css" // eslint-disable-line
-import { IconifyIcon } from "./IconifyIcon"
+import React from 'react'
+import { Link } from 'theme-ui'
+import Tippy from '@tippy.js/react'
+import styled from '@emotion/styled'
+import PropTypes from 'prop-types'
+import 'tippy.js/dist/tippy.css' // eslint-disable-line
+import { IconifyIcon } from './IconifyIcon'
 
 const IconLink = styled(Link)`
   transition: color 0.5s;
@@ -41,8 +41,8 @@ IconifyLink.propTypes = {
   sx: PropTypes.object,
 }
 IconifyLink.defaultProps = {
-  color: "",
-  url: "#",
+  color: '',
+  url: '#',
   onClick: () => {},
   sx: { width: 4, height: 4 },
 }

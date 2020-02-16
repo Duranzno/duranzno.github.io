@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { Fade } from "react-awesome-reveal"
-import { StaticQuery, graphql } from "gatsby"
-import { Text, Box, Link, Flex } from "theme-ui"
-import { IconifyLink } from "@components"
+import React from 'react'
+import styled from '@emotion/styled'
+import { Fade } from 'react-awesome-reveal'
+import { StaticQuery, graphql } from 'gatsby'
+import { Text, Box, Link, Flex } from 'theme-ui'
+import { IconifyLink } from '@components'
 
 const FooterComponent = data => {
   const { name, socialLinks } = data.contentfulAbout
@@ -14,7 +14,7 @@ const FooterComponent = data => {
   ))
   return (
     <Box
-      sx={{ p: 3, backgroundColor: "secondary" }}
+      sx={{ p: 3, backgroundColor: 'secondary' }}
       as="footer"
       className="footer"
     >
