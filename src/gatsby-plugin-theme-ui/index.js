@@ -2,7 +2,7 @@ import { convertHex } from '@utils'
 import mainColors from '../gatsby/colors'
 
 const { theme_color: primary } = mainColors
-const colors = {
+const colbors = {
   text: '#000000',
   textWhite: '#EEE',
   background: '#f6f6f6',
@@ -19,8 +19,9 @@ const heading = {
 }
 const sizes = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes,
+  colors,
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Karla, Helvetica, sans-serif',
     heading: 'Karla, Helvetica, sans-serif',
@@ -36,7 +37,6 @@ export default {
     body: 1.5,
     heading: 1.125,
   },
-  colors,
   styles: {
     root: {
       fontFamily: 'body',
