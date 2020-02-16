@@ -2,7 +2,7 @@ import { convertHex } from '@utils'
 import mainColors from '../gatsby/colors'
 
 const { theme_color: primary } = mainColors
-const colbors = {
+const colors = {
   text: '#000000',
   textWhite: '#EEE',
   background: '#f6f6f6',
