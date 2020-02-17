@@ -4,10 +4,11 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Fade } from 'react-awesome-reveal'
 import { Post, MorePosts } from '@components/Blog'
 import { Section, CardContainer } from '@common'
+import { parsePost, edgeToArray } from '@utils'
 
 export const Writing = ({ location: { origin } }) => {
   const data = useStaticQuery(query)
-  const posts = edgeToArray(data).map(parsePost(origin))
+  const posts = edgeToArray(data).map(parsePost(origin, Post))
   posts.push({
     id: 'more-field',
     number: data.totalCount,
@@ -28,35 +29,6 @@ export const Writing = ({ location: { origin } }) => {
   )
 }
 
-const parsePost = origin => postFromGraphql => {
-  const {
-    id,
-    createdAt: date,
-    title,
-    slug,
-    heroImage: {
-      file: { url: image },
-    },
-    description: {
-      childMarkdownRemark: { rawMarkdownBody: text },
-    },
-    body: {
-      childMarkdownRemark: { timeToRead: time },
-    },
-  } = postFromGraphql
-  return {
-    id,
-    title,
-    text,
-    image,
-    slug,
-    url: `${origin}/blog/${slug}`,
-    time,
-    date,
-    Component: Post,
-  }
-}
-const edgeToArray = data => data.allContentfulBlogPost.edges.map(edge => edge.node)
 const query = graphql`
   query WritingQuery {
     allContentfulBlogPost(
@@ -67,20 +39,24 @@ const query = graphql`
       totalCount
       edges {
         node {
-          id
           title
-          createdAt(formatString: "MMM YYYY")
+          id
           slug
+          publishDate(formatString: "MMMM DD, YYYY")
           heroImage {
-            file {
-              url
-              fileName
-              contentType
+            title
+            fluid(maxWidth: 350) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+            ogimg: resize(width: 350) {
+              src
             }
           }
           body {
             childMarkdownRemark {
               timeToRead
+              html
+              excerpt(pruneLength: 80)
             }
           }
           description {

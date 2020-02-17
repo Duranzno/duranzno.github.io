@@ -8,11 +8,15 @@ import { graphql } from 'gatsby'
 // import Pagination from '../components/Pagination'
 // import SEO from '../components/SEO'
 // import { startCase } from 'lodash'
-import { Container } from '@components/Blog'
+import { Container, DetailedPost as Post, DetailedPostList as List } from '@components/Blog'
 import { SEO, Layout } from '@common'
+import { parsePost, edgeToArray } from '@utils'
+
+const mapPost = ({ Component, ...rest }) => <Component {...rest} key={rest.id} />
 
 const BlogTemplate = ({ data, pageContext }) => {
-  const posts = data.allContentfulBlogPost.edges
+  let posts = edgeToArray(data).map(parsePost('', Post))
+  console.log(pageContext)
   const { humanPageNumber } = pageContext
   const isFirstPage = humanPageNumber === 1
   let featuredPost
@@ -21,24 +25,20 @@ const BlogTemplate = ({ data, pageContext }) => {
   } catch (error) {
     featuredPost = null
   }
+  posts = new Array(7).fill(posts[1])
+
   return (
     <Layout>
       <Container className="container">
         <SEO title="Blogs" />
-        {/* {isFirstPage ? (
-          <CardList>
-            <Card {...featuredPost} featured />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} />
-            ))}
-          </CardList>
+        {isFirstPage ? (
+          <List>
+            <Post {...featuredPost} featured />
+            {posts.slice(1).map(mapPost)}
+          </List>
         ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} />
-            ))}
-          </CardList>
-        )} */}
+          <List>{posts.map(mapPost)}</List>
+        )}
       </Container>
     </Layout>
   )
@@ -67,6 +67,11 @@ export const pageQuery = graphql`
               timeToRead
               html
               excerpt(pruneLength: 80)
+            }
+          }
+          description {
+            childMarkdownRemark {
+              rawMarkdownBody
             }
           }
         }
