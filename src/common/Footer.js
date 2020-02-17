@@ -9,7 +9,7 @@ const FooterComponent = data => {
   const { name, socialLinks } = data.contentfulAbout
   const Links = socialLinks.map(({ id, ...rest }) => (
     <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
-      <IconifyLink {...rest} sx={{ width: 4, height: 4 }} />
+      <IconifyLink {...rest} sx={{ width: 4, height: 4, color: 'tertiary' }} />
     </Box>
   ))
   return (
@@ -32,7 +32,7 @@ const FooterComponent = data => {
 export const Footer = () => <StaticQuery query={query} render={FooterComponent} />
 const FooterContainer = styled(Box)`
   width: 100vw;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.primary};
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;

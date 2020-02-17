@@ -1,22 +1,23 @@
 import { convertHex } from '@utils'
 import mainColors from '../gatsby/colors'
 
-const { theme_color: primary } = mainColors
+const { theme_color: primary, background_color: background } = mainColors
 const colors = {
-  text: '#000000',
-  textWhite: '#EEE',
-  background: '#f6f6f6',
-  primary,
-  tertiary: '#cfcfcf',
-  grey: 'grey',
-  black: 'black',
-  secondary: '#306',
+  // Imported
+  primary, // #5217ff
+  background, // #f6f6f6
+  secondary: '#FF6F00',
   blue: '#102f46',
-  skyBlue: '#26d0ce',
+  skyBlue: '#0cbaba',
   darkBlue: '#1a2980',
-  orange: '#ffa500',
   red: '#9e2053',
   pink: '#ffc0cb',
+  // Monochromes
+  textWhite: '#EEE',
+  tertiary: '#cfcfcf',
+  grey: '#dbd7d2',
+  text: '#100c08',
+  black: '#100c08',
 }
 const heading = {
   color: 'text',
@@ -58,13 +59,13 @@ export default {
         width: '10px',
       },
       '::-webkit-scrollbar-thumb': {
-        WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.primary)}`,
+        WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.secondary)}`,
       },
       '::-webkit-scrollbar-track': {
         WebkitBoxShadow: `inset 0 0 20px ${convertHex(colors.text)}`,
       },
       '::-webkit-scrollbar-thumb:hover': {
-        WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.primary, 1)}`,
+        WebkitBoxShadow: `inset 0 0 50px ${convertHex(colors.secondary, 1)}`,
       },
       overflowX: 'hidden',
     },

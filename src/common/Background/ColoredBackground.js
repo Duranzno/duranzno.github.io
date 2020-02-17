@@ -9,7 +9,7 @@ const Radial = styled.div`
   height: 100%;
   background: ${({ theme: { colors } }) => {
     console.log(colors)
-    return `radial-gradient(closest-corner,${convertHex(colors.blue, 0)}, 60%,${convertHex(colors.blue, 26)}),
+    return `radial-gradient(closest-corner,${convertHex(colors.red, 0)}, 60%,${convertHex(colors.blue, 26)}),
     -webkit-linear-gradient(108deg, ${colors.skyBlue}, ${colors.darkBlue} 90%)`
   }};
 `

@@ -8,7 +8,7 @@ export const SocialMediaTab = ({ socialLinks, sx }) => {
     <Box sx={sx}>
       {socialLinks.map(({ id, ...rest }) => (
         <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-          <IconifyLink sx={{ width: [5], height: [5] }} {...rest} />
+          <IconifyLink sx={{ width: [5], height: [5], color: 'tertiary' }} {...rest} />
         </Box>
       ))}
     </Box>

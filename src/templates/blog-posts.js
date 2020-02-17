@@ -34,7 +34,12 @@ const BlogTemplate = ({ data, pageContext }) => {
 
 export const pageQuery = graphql`
   query($skip: Int!, $limit: Int!) {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }, limit: $limit, skip: $skip) {
+    allContentfulBlogPost(
+      sort: { fields: [publishDate], order: DESC }
+      limit: $limit
+      skip: $skip
+      filter: { node_locale: { eq: "en-US" } }
+    ) {
       edges {
         node {
           title

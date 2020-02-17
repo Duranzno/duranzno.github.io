@@ -37,7 +37,7 @@ export const DetailedPost = ({ title, text, image, url, date, time, featured }) 
     {image && <CoverImage fluid={image.fluid} height="200px" alt={title} />}
     <EllipsisHeading sx={{ m: 3, p: 1 }}>{title}</EllipsisHeading>
     <Text m={3}>{text}</Text>
-    <ImageSubtitle bg="primary" color="white" x="right" y="bottom" round>
+    <ImageSubtitle bg="secondary" color="secondary" sx={{ background: 'secondary' }} x="right" y="bottom" round>
       {`${date} - ${Math.ceil(time)} min`}
     </ImageSubtitle>
   </Card>

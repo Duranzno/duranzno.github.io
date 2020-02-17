@@ -7,7 +7,7 @@ import { SectionLinks } from 'react-scroll-section'
 import { Flex, Image } from 'theme-ui'
 import { formatLinks, isEmpty } from '@utils'
 import { RouteLink } from '@components'
-import Logo from '../svg/logo.svg'
+import Logo from '../static/B&W.svg'
 
 const HeaderContainer = styled(Headroom)`
   .headroom--pinned {

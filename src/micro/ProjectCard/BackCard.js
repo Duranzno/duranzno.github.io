@@ -42,7 +42,7 @@ export const BackCard = ({ project }) => {
       <Heading as="h6">{new Date(project.publishedDate).getFullYear()}</Heading>
       <Flex sx={{ justifyContent: 'center' }}>
         {projectLinks.map(v => (
-          <IconifyLink key={v.url} {...v} sx={{ width: 4, height: 4 }} />
+          <IconifyLink key={v.url} {...v} sx={{ width: 4, height: 4, color: 'secondary' }} />
         ))}
       </Flex>
 

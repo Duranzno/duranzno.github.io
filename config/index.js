@@ -12,7 +12,7 @@ const pluginManifest = {
   start_url: `/`,
   background_color,
   theme_color,
-  icon: "src/static/favicon/favicon-512.png", 
+  icon: "src/static/Alternative.png", 
   display: `minimal-ui`,
 }
 module.exports = {
