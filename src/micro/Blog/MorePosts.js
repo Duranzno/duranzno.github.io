@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Flex, Box, Heading } from 'theme-ui'
 import { Card } from './Post.styles'
 import { IconifyLink } from '../Icons/IconifyLink'
-import { EllipsisHeading } from '../Card'
+import { EllipsisHeading } from '../EllipsisHeading'
+
 export const MorePosts = ({ number, url }) => (
   // eslint-disable-next-line no-undef
   <Card onClick={() => window.open(url, '_blank')} sx={{ px: 4, pb: 4, pt: 2 }}>
@@ -21,17 +22,11 @@ export const MorePosts = ({ number, url }) => (
             🎉
           </span>
         </EllipsisHeading>
-        <Heading
-          sx={{ lineHeight: 1.5 }}
-        >{`There are ${number} more posts!`}</Heading>
+        <Heading sx={{ lineHeight: 1.5 }}>{`There are ${number} more posts!`}</Heading>
       </Box>
       <Heading color="primary" mt={5} textAlign="right">
         Go to Blog &nbsp;
-        <IconifyLink
-          sx={{ width: 3, height: 3 }}
-          iconifyName="mdi-arrow-right"
-          name=""
-        />
+        <IconifyLink sx={{ width: 3, height: 3 }} iconifyName="mdi-arrow-right" name="" />
       </Heading>
     </Flex>
   </Card>

@@ -2,7 +2,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Fade } from 'react-awesome-reveal'
-import { Post, MorePosts } from '@components/Post'
+import { Post, MorePosts } from '@components/Blog'
 import { Section, CardContainer } from '@common'
 
 export const Writing = ({ location: { origin } }) => {

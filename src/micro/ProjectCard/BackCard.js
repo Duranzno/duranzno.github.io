@@ -7,7 +7,7 @@ import { setLimitLength } from '@utils'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
 import { IconifyLink } from '../Icons/IconifyLink'
 import { TechTag } from '../Icons/TechTag'
-import { EllipsisHeading } from '../Card'
+import { EllipsisHeading } from '../EllipsisHeading'
 
 const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
 const DELAY = 3000000000000

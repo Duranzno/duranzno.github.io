@@ -1,11 +1,7 @@
 import React from 'react'
 import { Text, Image, Box } from 'theme-ui'
-import {
-  ProjectPropTypes,
-  StyledCard,
-  ProjectDefaultProps,
-} from './ProjectCard.styles'
-import { EllipsisHeading } from '../Card'
+import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
+import { EllipsisHeading } from '../EllipsisHeading'
 
 export const FrontCard = ({ project }) => (
   <StyledCard className="FrontCard-card" sx={{ textAlign: 'center' }}>
@@ -16,10 +12,7 @@ export const FrontCard = ({ project }) => (
     />
     <Box sx={{ display: 'flex', flexDirection: 'row', mb: 2 }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', px: 3 }}>
-        <EllipsisHeading
-          sx={{ fontSize: 4, fontWeight: 'bold' }}
-          variant="heading"
-        >
+        <EllipsisHeading sx={{ fontSize: 4, fontWeight: 'bold' }} variant="heading">
           {project.name}
         </EllipsisHeading>
         <Text sx={{ fontSize: 2 }}>{project.blurb}</Text>

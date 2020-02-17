@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Text } from 'theme-ui'
 import { ImageSubtitle, CoverImage, Card } from './Post.styles'
-import { EllipsisHeading } from '../Card'
+import { EllipsisHeading } from '../EllipsisHeading'
 
 export const Post = ({ title, text, image, url, date, time }) => (
   // eslint-disable-next-line no-undef

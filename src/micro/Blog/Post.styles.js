@@ -1,7 +1,28 @@
 import PropTypes from 'prop-types'
-import { Box } from 'theme-ui'
 import styled from '@emotion/styled'
+import { Card as CardThemeUI, Image, Box } from 'theme-ui'
 
+export const CoverImage = styled(Image)`
+  width: 100%;
+  object-fit: cover;
+`
+
+export const Card = styled(CardThemeUI)`
+  border-radius: 8px;
+  background: ${props => props.theme.colors.background};
+  position: relative;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s;
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
+  top: 0;
+  height: 100%;
+  min-height: 500px;
+
+  &:hover {
+    top: -10px;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  }
+`
 const BORDER_SPACING = '20px'
 const BORDER_RADIUS = '8px'
 
@@ -30,15 +51,10 @@ export const ImageSubtitle = styled(Box)`
   ${props => props.x}: 0;
   ${props => props.y}: 0;
   
-  ${props =>
-    props.x === 'left'
-      ? `padding-right: ${BORDER_SPACING};`
-      : `padding-left: ${BORDER_SPACING};`}
+  ${props => (props.x === 'left' ? `padding-right: ${BORDER_SPACING};` : `padding-left: ${BORDER_SPACING};`)}
   clip-path: ${props => BORDER_PATH_MAP[`${props.y}-${props.x}`]};
   
-  ${props =>
-    props.round &&
-    `border-radius: ${BORDER_RADIUS_MAP[`${props.y}-${props.x}`]};`}
+  ${props => props.round && `border-radius: ${BORDER_RADIUS_MAP[`${props.y}-${props.x}`]};`}
 `
 
 ImageSubtitle.propTypes = {
