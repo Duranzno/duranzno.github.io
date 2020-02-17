@@ -21,7 +21,7 @@ export const Post = ({ title, text, image, url, date, time }) => (
 Post.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   url: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   time: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,

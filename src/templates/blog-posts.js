@@ -9,12 +9,10 @@ import { parsePost, edgeToArray } from '@utils'
 const mapPost = ({ Component, ...rest }) => <Component {...rest} key={rest.id} />
 
 const BlogTemplate = ({ data, pageContext }) => {
-  let posts = edgeToArray(data).map(parsePost('', Post))
-  console.log(pageContext)
+  const posts = edgeToArray(data).map(parsePost('', Post))
   const { humanPageNumber } = pageContext
   const isFirstPage = humanPageNumber === 1
   const [featuredPost] = posts
-  posts = new Array(7).fill(posts[1])
 
   return (
     <Layout>
