@@ -5,17 +5,9 @@ import { graphql } from 'gatsby'
 
 import { get } from '@utils'
 import { SEO, Layout } from '@common'
-import { Flex } from 'theme-ui'
-import { Hero } from '@components/Blog'
+import { Hero, Container } from '@components/Blog'
 import { TechTags, PostDetails, PageBody, PostLinks } from '@components'
-import styled from '@emotion/styled'
 
-const Container = styled.section`
-  margin: 0 auto auto;
-  background: ${props => props.theme.colors.background};
-  width: 100%;
-  flex: 1 0 auto;
-`
 const BlogPostTemplate = ({ data, pageContext }) => {
   const { title, heroImage, body, publishDate, stack } = get(data, 'contentfulBlogPost')
   const { prev, next, basePath } = pageContext
