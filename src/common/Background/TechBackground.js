@@ -7,27 +7,25 @@ import { IconifyIcon } from '@components'
 import { upDownAnimation, upDownWideAnimation } from '../common.styles.animations'
 
 export const TechBackground = () => {
-  const dimensions = useWindowSize()
   const {
     allContentfulStackLink: { edges },
   } = useStaticQuery(query)
-  return null
-  // return (
-  //   <Bg className="tech-background">
-  //     {edges.map(e => {
-  //       const {
-  //         node: { id, iconifyName, name },
-  //       } = e
-  //       const { x, y } = randomizePosition(dimensions)
-  //       const sx = {
-  //         size: Math.floor(Math.random() * 3) + 4,
-  //         animation: Math.random() ? upDownAnimation : upDownWideAnimation,
-  //       }
-  //       const iconifyProps = { id, iconifyName, name, url: name, sx }
-  //       return <IconifyIcon animated x={x} y={y} key={id} {...iconifyProps} />
-  //     })}
-  //   </Bg>
-  // )
+
+  return (
+    <Bg className="tech-background">
+      {edges.map(e => {
+        const {
+          node: { id, iconifyName, name },
+        } = e
+        const sx = {
+          size: Math.floor(Math.random() * 3) + 4,
+          animation: Math.random() ? upDownAnimation : upDownWideAnimation,
+        }
+        const iconifyProps = { id, iconifyName, name, url: name, sx }
+        return <IconifyIcon animated random key={id} {...iconifyProps} />
+      })}
+    </Bg>
+  )
 }
 const query = graphql`
   query UsedStack {

@@ -10,7 +10,7 @@ import { TechTag } from '../Icons/TechTag'
 import { EllipsisHeading } from '../EllipsisHeading'
 
 const SOCIAL_LINK_PROP = { sx: { width: 4, height: 4, mx: 2 }, color: 'black' }
-const DELAY = 3000000000000
+const DELAY = 2000
 const MAX_LENGTH = 175
 const createProjectLinks = project => {
   return [

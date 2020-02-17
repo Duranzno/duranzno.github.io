@@ -39,9 +39,7 @@ export const Header = () => {
             <SectionLinks>
               {({ allLinks }) => {
                 const defaultLinks = setDefaultLinks(origin)
-                const { home, links } = formatLinks(
-                  isEmpty(allLinks) ? defaultLinks : allLinks
-                )
+                const { home, links } = formatLinks(isEmpty(allLinks) ? defaultLinks : allLinks)
                 const homeLink = home && (
                   <Image
                     sx={{ width: 30 }}
@@ -62,12 +60,7 @@ export const Header = () => {
                       name={name}
                     />
                   ) : (
-                    <RouteLink
-                      key={name}
-                      onClick={value.onClick}
-                      selected={value.selected}
-                      name={name}
-                    />
+                    <RouteLink key={name} onClick={value.onClick} selected={value.selected} name={name} />
                   )
                 )
                 return (

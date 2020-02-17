@@ -8,8 +8,7 @@ import { IconifyIcon } from './IconifyIcon'
 
 const IconLink = styled(Link)`
   transition: color 0.5s;
-  color: ${props =>
-    props.theme.colors[props.color] || props.theme.colors.primary};
+  color: ${props => props.theme.colors[props.color] || props.theme.colors.primary};
   text-decoration: none;
 
   &:hover {
@@ -19,14 +18,7 @@ const IconLink = styled(Link)`
 export const IconifyLink = ({ iconifyName, name, url, color, sx, onClick }) => {
   return (
     <Tippy content={name} placement="bottom" trigger="mouseenter" arrow={false}>
-      <IconLink
-        href={url}
-        target="_blank"
-        color={color}
-        rel="noreferrer"
-        aria-label={name}
-        onClick={onClick}
-      >
+      <IconLink href={url} target="_blank" color={color} rel="noreferrer" aria-label={name} onClick={onClick}>
         <IconifyIcon iconifyName={iconifyName} sx={sx} />
       </IconLink>
     </Tippy>

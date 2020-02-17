@@ -7,7 +7,7 @@ import { EllipsisHeading } from '../EllipsisHeading'
 
 export const MorePosts = ({ number, url }) => (
   // eslint-disable-next-line no-undef
-  <Card onClick={() => window.open(url, '_blank')} sx={{ px: 4, pb: 4, pt: 2 }}>
+  <Card className="hover-move" onClick={() => window.open(url, '_blank')} sx={{ px: 4, pb: 4, pt: 2 }}>
     <Flex
       sx={{
         flexDirection: 'column',
