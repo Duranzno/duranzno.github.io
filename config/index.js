@@ -1,5 +1,5 @@
 /* eslint-disable */
-const {theme_color,background_color} = require("../src/data/colors")
+const {theme_color,background_color} = require("../src/gatsby/colors")
 const siteMetadata = {
   title: "hey",
   description: "",

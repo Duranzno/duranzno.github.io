@@ -39,7 +39,7 @@ const NotFound = styled(Text)`
     animation-direction: alternate;
 
     background-image: ${({ theme: { colors } }) =>
-      `repeating-linear-gradient(-45deg, transparent, transparent 1em, #9e2053 1em, #ffa500 50%),repeating-linear-gradient(45deg, ${colors.primary}, ${colors.primary} 1em, #ffc0cb 1em, ${colors.secondary} 50%)`};
+      `repeating-linear-gradient(-45deg, transparent, transparent 1em, ${colors.red} 1em, ${colors.orange} 50%),repeating-linear-gradient(45deg, ${colors.primary}, ${colors.primary} 1em, ${colors.pink} 1em, ${colors.secondary} 50%)`};
   }
 `
 const NotFoundPage = () => (

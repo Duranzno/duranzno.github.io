@@ -11,6 +11,12 @@ const colors = {
   grey: 'grey',
   black: 'black',
   secondary: '#306',
+  blue: '#102f46',
+  skyBlue: '#26d0ce',
+  darkBlue: '#1a2980',
+  orange: '#ffa500',
+  red: '#9e2053',
+  pink: '#ffc0cb',
 }
 const heading = {
   color: 'text',

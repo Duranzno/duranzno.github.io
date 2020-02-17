@@ -21,7 +21,6 @@ export const IconifyIcon = ({ iconifyName, random, sx }) => {
   if (random) {
     positions = randomizePosition(dimensions)
   }
-  console.log(`${JSON.stringify(positions)} para ${iconifyName}`)
   const props = {
     className: 'iconify',
     'data-icon': iconifyName,

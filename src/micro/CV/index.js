@@ -2,8 +2,8 @@ import styled from '@emotion/styled'
 import { Box } from 'theme-ui'
 
 export const Body = styled(Box)`
-  background: #fff;
-  @media print {  background: #fff;}
+  background: white;
+  @media print {  background: white;}
   font-size: 12px;
   margin-top: 0.5px;
   margin-bottom: 0.5px;
