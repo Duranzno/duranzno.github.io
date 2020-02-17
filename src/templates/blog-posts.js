@@ -1,14 +1,8 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
-// import Layout from '../components/Layout'
-// import CardList from '../components/CardList'
-// import Card from '../components/Card'
-// import Container from '../components/Container'
-// import Pagination from '../components/Pagination'
-// import SEO from '../components/SEO'
-// import { startCase } from 'lodash'
-import { Container, DetailedPost as Post, DetailedPostList as List } from '@components/Blog'
+import { Container, DetailedPost as Post, DetailedPostList as List, Pagination } from '@components/Blog'
 import { SEO, Layout } from '@common'
 import { parsePost, edgeToArray } from '@utils'
 
@@ -19,18 +13,13 @@ const BlogTemplate = ({ data, pageContext }) => {
   console.log(pageContext)
   const { humanPageNumber } = pageContext
   const isFirstPage = humanPageNumber === 1
-  let featuredPost
-  try {
-    featuredPost = posts[0].node
-  } catch (error) {
-    featuredPost = null
-  }
+  const [featuredPost] = posts
   posts = new Array(7).fill(posts[1])
 
   return (
     <Layout>
-      <Container className="container">
-        <SEO title="Blogs" />
+      <SEO title="Blog" />
+      <Container className="container" sx={{ px: [3, 5, 7], pt: '6rem' }}>
         {isFirstPage ? (
           <List>
             <Post {...featuredPost} featured />
@@ -39,6 +28,7 @@ const BlogTemplate = ({ data, pageContext }) => {
         ) : (
           <List>{posts.map(mapPost)}</List>
         )}
+        <Pagination context={pageContext} />
       </Container>
     </Layout>
   )

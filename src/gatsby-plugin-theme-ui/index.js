@@ -7,6 +7,7 @@ const colors = {
   textWhite: '#EEE',
   background: '#f6f6f6',
   primary,
+  tertiary: '#cfcfcf',
   grey: 'grey',
   black: 'black',
   secondary: '#306',

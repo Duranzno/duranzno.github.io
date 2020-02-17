@@ -8,9 +8,9 @@ import { EllipsisHeading } from '../EllipsisHeading'
 
 export const Post = ({ title, text, image, url, date, time }) => (
   // eslint-disable-next-line no-undef
-  <Card onClick={() => window.open(url, '_blank')} sx={{ pb: 4, pt: 2 }}>
+  <Card className="hover-move" onClick={() => window.open(url, '_blank')} sx={{ pb: 4, pt: 2 }}>
     <EllipsisHeading sx={{ m: 3, p: 1 }}>{title}</EllipsisHeading>
-    {image && <CoverImage src={image} height="200px" alt={title} />}
+    {image && <CoverImage fluid={image.fluid} height="200px" alt={title} />}
     <Text m={3}>{text}</Text>
     <ImageSubtitle bg="primary" color="white" x="right" y="bottom" round>
       {`${date} - ${Math.ceil(time)} min`}
@@ -26,11 +26,16 @@ Post.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 }
-export const DetailedPost = ({ title, text, image, url, date, time }) => (
-  // eslint-disable-next-line no-undef
-  <Card onClick={() => window.open(url, '_blank')} sx={{ pb: 4, pt: 2 }}>
+export const DetailedPost = ({ title, text, image, url, date, time, featured }) => (
+  <Card
+    className="hover-shade"
+    featured={featured}
+    // eslint-disable-next-line no-undef
+    onClick={() => window.open(url, '_blank')}
+    sx={{ pb: 4, borderRadiusTopLeft: 2, borderRadiusTopRight: 2 }}
+  >
+    {image && <CoverImage fluid={image.fluid} height="200px" alt={title} />}
     <EllipsisHeading sx={{ m: 3, p: 1 }}>{title}</EllipsisHeading>
-    {image && <CoverImage src={image} height="200px" alt={title} />}
     <Text m={3}>{text}</Text>
     <ImageSubtitle bg="primary" color="white" x="right" y="bottom" round>
       {`${date} - ${Math.ceil(time)} min`}
@@ -38,8 +43,9 @@ export const DetailedPost = ({ title, text, image, url, date, time }) => (
   </Card>
 )
 
-DetailedPost.propTypes = Post.propTypes
-export const DetailedPostList = styled.ul`
+DetailedPost.propTypes = { ...Post.propTypes, featured: PropTypes.bool }
+DetailedPost.defaultProps = { featured: false }
+export const DetailedPostList = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;

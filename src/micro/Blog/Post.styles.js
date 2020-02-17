@@ -1,26 +1,41 @@
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { Card as CardThemeUI, Image, Box } from 'theme-ui'
+import { Card as CardThemeUI, Box } from 'theme-ui'
+import Img from 'gatsby-image'
 
-export const CoverImage = styled(Image)`
+export const CoverImage = styled(Img)`
   width: 100%;
   object-fit: cover;
+  max-height: ${props => `${props.height}`};
 `
 
 export const Card = styled(CardThemeUI)`
-  border-radius: 8px;
-  background: ${props => props.theme.colors.background};
-  position: relative;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  transition: all 0.25s;
-  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
   top: 0;
-  height: 100%;
-  min-height: 500px;
-
-  &:hover {
-    top: -10px;
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  background: ${props => props.theme.colors.background};
+  @media screen and (min-width: ${props => props.theme.responsive.small}) {
+    flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
+    margin: 0 0 2vw 0;
+  }
+  @media screen and (min-width: ${props => props.theme.responsive.medium}) {
+    flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
+  }
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
+  &.hover-move {
+    transition: all 0.25s;
+    height: 100%;
+    min-height: 500px;
+    &:hover {
+      top: -10px;
+      box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &.hover-shade {
+    &:hover {
+      background: ${props => props.theme.colors.tertiary};
+    }
   }
 `
 const BORDER_SPACING = '20px'

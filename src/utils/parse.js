@@ -4,9 +4,7 @@ export const parsePost = (origin, Component) => postFromGraphql => {
     publishDate: date,
     title,
     slug,
-    heroImage: {
-      ogimg: { src: image },
-    },
+    heroImage: image,
     description: {
       childMarkdownRemark: { rawMarkdownBody: text },
     },
