@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-
-import { Text, Image, Heading, Flex } from 'theme-ui'
+import Image from 'gatsby-image'
+import { Text, Heading, Flex } from 'theme-ui'
 import { Fade } from 'react-awesome-reveal'
 import useInterval from '@use-it/interval'
 import { setLimitLength } from '@utils'
@@ -55,7 +55,7 @@ export const BackCard = ({ project }) => {
         }}
       >
         <Fade LightSpeed>{tagList[stackIndex]}</Fade>
-        {project.logo && <Image src={project.logo.file.url} alt={project.name} sx={{ size: 4 }} />}
+        {project.logo && <Image fluid={project.logo.fluid} alt={project.name} sx={{ size: 4 }} />}
       </Flex>
     </StyledCard>
   )

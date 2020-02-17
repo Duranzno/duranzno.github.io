@@ -16,15 +16,10 @@ const ProjectsComponent = data => {
     </Section.Container>
   )
 }
-export const Projects = () => (
-  <StaticQuery query={query} render={ProjectsComponent} />
-)
+export const Projects = () => <StaticQuery query={query} render={ProjectsComponent} />
 const query = graphql`
   query ProjectsQuery {
-    allContentfulProject(
-      filter: { node_locale: { eq: "en-US" } }
-      sort: { fields: createdAt, order: DESC }
-    ) {
+    allContentfulProject(filter: { node_locale: { eq: "en-US" } }, sort: { fields: createdAt, order: DESC }) {
       nodes {
         name
         description
@@ -34,6 +29,9 @@ const query = graphql`
         repositoryUrl
         blurb
         logo {
+          fluid(maxWidth: 150, maxHeight: 150, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_withWebp
+          }
           file {
             url
           }
@@ -44,6 +42,9 @@ const query = graphql`
           iconifyName
         }
         screenshots {
+          fluid(maxWidth: 500, maxHeight: 500, resizingBehavior: FILL) {
+            ...GatsbyContentfulFluid_withWebp
+          }
           file {
             url
           }

@@ -1,12 +1,13 @@
 import React from 'react'
-import { Text, Image, Box } from 'theme-ui'
+import Image from 'gatsby-image'
+import { Text, Box } from 'theme-ui'
 import { ProjectPropTypes, StyledCard, ProjectDefaultProps } from './ProjectCard.styles'
 import { EllipsisHeading } from '../EllipsisHeading'
 
 export const FrontCard = ({ project }) => (
   <StyledCard className="FrontCard-card" sx={{ textAlign: 'center' }}>
     <Image
-      src={project.screenshots[0].file.url}
+      fluid={project.screenshots[0].fluid}
       sx={{ maxWidth: '300px', borderRadius: '8px 8px 0px 0px' }}
       alt={project.name}
     />
