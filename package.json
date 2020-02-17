@@ -56,6 +56,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "test:develop":"node --nolazy --inspect-brk $(npm bin)/gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "rm -rf .cache && npm run develop",
     "serve": "gatsby serve",

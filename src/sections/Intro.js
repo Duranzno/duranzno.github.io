@@ -11,7 +11,6 @@ import { TechBackground } from '@common/Background'
 export const IntroContent = ({ contentfulAbout: data }) => {
   const { profile, title, socialLinks } = data
   const background = <TechBackground />
-  console.log(profile.fluid)
   return (
     <Section.Container id="home" background={background}>
       <Box

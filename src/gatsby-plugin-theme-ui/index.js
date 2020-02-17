@@ -37,6 +37,11 @@ export default {
     body: 1.5,
     heading: 1.125,
   },
+  responsive: {
+    small: '35em',
+    medium: '50em',
+    large: '70em',
+  },
   styles: {
     root: {
       fontFamily: 'body',

@@ -13,28 +13,26 @@ const FooterComponent = data => {
     </Box>
   ))
   return (
-    <Box sx={{ p: 3, backgroundColor: 'secondary' }} as="footer" className="footer">
-      <FooterContainer>
-        <Fade left triggerOnce>
-          <TextFooter fontSize={[2, 3]}>
-            <span>{`${name}'s Portfolio - Powered by `}</span>
-            <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
-            <span role="img" aria-label="heart">
-              ❤️
-            </span>
-          </TextFooter>
-        </Fade>
-        <Fade right triggerOnce>
-          <Flex>{Links}</Flex>
-        </Fade>
-      </FooterContainer>
-    </Box>
+    <FooterContainer sx={{ p: 3 }} as="footer" className="footer">
+      <Fade left triggerOnce>
+        <TextFooter fontSize={[2, 3]}>
+          <span>{`${name}'s Portfolio - Powered by `}</span>
+          <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>
+        </TextFooter>
+      </Fade>
+      <Fade right triggerOnce>
+        <Flex>{Links}</Flex>
+      </Fade>
+    </FooterContainer>
   )
 }
 export const Footer = () => <StaticQuery query={query} render={FooterComponent} />
-const FooterContainer = styled.div`
-  min-width: 320px;
-  max-width: 1366px;
+const FooterContainer = styled(Box)`
+  width: 100vw;
+  background-color: ${props => props.theme.colors.secondary};
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;

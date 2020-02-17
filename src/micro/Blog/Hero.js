@@ -1,62 +1,69 @@
-import React from 'react'
+/** @jsx jsx */
+
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { Text } from 'theme-ui'
+import { useThemeUI, jsx } from 'theme-ui'
 
-export const Hero = ({ data }) => (
-  <HeroContainer>
-    <HeroImage alt={data.name} fluid={data.heroImage.fluid} />
-    <HeroDetails>
-      <Text className="hero-headline" as="h3">
-        {data.name}
-      </Text>
-      <Text as="p" className="hero-title">
-        {data.title}
-      </Text>
-      <Text as="p">{data.shortBio.shortBio}</Text>
-    </HeroDetails>
-  </HeroContainer>
-)
-Hero.propTypes = {
-  data: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    heroImage: PropTypes.any.isRequired,
-    title: PropTypes.string.isRequired,
-    shortBio: PropTypes.any.isRequired,
-  }).isRequired,
+export const Hero = ({ heroImage, title, sx }) => {
+  const colors = useThemeUI()
+  return (
+    <Wrapper sx={{ sx }} as="section">
+      <BgImg fluid={heroImage.fluid} alt={title} backgroundColor={colors.background} />
+      <Title>{title}</Title>
+    </Wrapper>
+  )
 }
-const HeroContainer = styled.div`
-  position: relative;
-  background: #000;
-  color: #fff;
-  text-align: center;
-`
-const HeroImage = styled(Img)`
-  /*
-    Ensure golden ratio for the hero size while limiting it to some extend to
-    the viewport width
-  */
-  height: 61.8vh;
-  max-height: 400px;
-`
-const HeroDetails = styled.div`
-  position: absolute;
-  background: rgba(0, 0, 0, 0.7);
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 0);
-  font-size: 14px;
-  padding: 0 0.5em;
-  @media (min-width: 600px) {
-    font-size: 16px;
-  }
-  @media (min-width: 1000px) {
-    font-size: 20px;
-  }
+Hero.propTypes = {
+  heroImage: PropTypes.any.isRequired,
+  title: PropTypes.string.isRequired,
+  sx: PropTypes.any,
+}
 
-  .hero-title {
+Hero.defaultProps = {
+  sx: {
+    height: '50vh',
+    paddingTop: '6rem',
+  },
+}
+const Wrapper = styled.section`
+  position: relative;
+  min-height: 300px;
+  /* height: auto; */
+  /* @media (min-width: ${props => props.theme.responsive.small}) { */
+    height: ${props => (props.sx && props.sx.height) || '50vh'};
+  /* } */
+`
+const BgImg = styled(Img)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &::before {
+    content: '';
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
   }
-  .hero-headline {
-  }
+`
+
+const Title = styled.h1`
+  z-index: 2;
+  font-size: 3em;
+  text-transform: capitalize;
+  font-weight: 600;
+  position: absolute;
+  width: 100%;
+  /* max-width: ${props => props.theme.sizes.maxWidthCentered}; */
+  padding: 0 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 `

@@ -56,7 +56,7 @@ const parsePost = origin => postFromGraphql => {
     Component: Post,
   }
 }
-const edgeToArr = data => data.allContentfulBlogPost.edges.map(edge => edge.node)
+const edgeToArray = data => data.allContentfulBlogPost.edges.map(edge => edge.node)
 const query = graphql`
   query WritingQuery {
     allContentfulBlogPost(

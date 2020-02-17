@@ -1,9 +1,9 @@
 {
 	"folders": [
-    // {
-    //   "name": "examples",
-		// 	"path": "/home/ale/Development/portfolio/examples"
-    // },
+    {
+      "name": "examples",
+			"path": "/home/ale/Development/portfolio/examples"
+    },
 		{
       "name": "main",
 			"path": "/home/ale/Development/portfolio/repo"

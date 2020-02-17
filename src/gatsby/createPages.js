@@ -5,19 +5,16 @@ const query = require('./query')
 
 module.exports = async ({ graphql, actions: { createPage } }) => {
   const postsQuery = await graphql(query.data.posts)
-  const basePath = '/'
   const posts = postsQuery.data.allContentfulBlogPost.edges
   posts.forEach((post, i) => {
     const next = i === posts.length - 1 ? null : posts[i + 1].node
     const prev = i === 0 ? null : posts[i - 1].node
     const postName = post.node.slug.toLowerCase()
-
     createPage({
-      path: `${basePath === '/' ? '/' : basePath}blog/${postName}`,
+      path: `/blog/${postName}`,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: post.node.slug,
-        basePath: basePath === '/' ? '' : basePath,
         prev,
         next,
       },
@@ -27,15 +24,11 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   // Create a page containing all "posts" and paginate.
   paginate({
     createPage,
-    component: path.resolve(`./src/templates/posts.js`),
+    component: path.resolve(`./src/templates/blog-posts.js`),
     items: posts,
     itemsPerFirstPage: config.siteMetadata.postsPerFirstPage || 7,
     itemsPerPage: config.siteMetadata.postsPerPage || 6,
-    pathPrefix: basePath,
-    context: {
-      basePath: basePath === '/' ? '' : basePath,
-      paginationPath: basePath === '/' ? '' : `/${basePath}`,
-    },
+    pathPrefix: '/blog',
   })
 
   // Create "stack" page and paginate
@@ -43,7 +36,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   const stacks = stacksQuery.data.allContentfulStackLink.edges
   stacks.forEach(stack => {
     const name = stack.node.name.toLowerCase()
-    const stackPagination = basePath === '/' ? `/tag/${name}` : `/${basePath}/tag/${name}`
+    const stackPagination = `/tag/${name}`
 
     paginate({
       createPage,
@@ -53,7 +46,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
       pathPrefix: stackPagination,
       context: {
         name: stack.node.name,
-        basePath: basePath === '/' ? '' : basePath,
         paginationPath: stackPagination,
       },
     })
