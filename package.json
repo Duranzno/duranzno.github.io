@@ -47,6 +47,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "netlify-cli": "^2.37.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -56,7 +57,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "test:develop":"node --nolazy --inspect-brk $(npm bin)/gatsby develop",
+    "test:develop": "node --nolazy --inspect-brk $(npm bin)/gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "rm -rf .cache && npm run develop",
     "serve": "gatsby serve",
