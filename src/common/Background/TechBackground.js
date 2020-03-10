@@ -10,7 +10,7 @@ export const TechBackground = () => {
   const {
     allContentfulStackLink: { edges },
   } = useStaticQuery(query)
-
+  return null;
   return (
     <Bg className="tech-background">
       {edges.map(e => {
