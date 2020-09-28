@@ -9,28 +9,48 @@ prose:
   #     - /_layouts
   #     - /_includes
   metadata:
-    _posts:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "blog"
-      - name: "tags"
-        field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          options:
-            - name: "Apples"
-              value: "apples"
-            - name: "Bananas"
-              value: "bananas"
-    _posts/static:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "page"
-      - name: "permalink"
+    _blog:
+      - name: "title"
         field:
           element: "text"
-          label: "Permalink"
-          value: ""
+          value: "title"
+      - name: "categories"
+        field:
+          element: "multiselect"
+          label: "Select Categories"
+          alterable: true
+          placeholder: "Choose Tags"
+          options:
+            - name: "hackathon"
+              value: "hackathon"
+            - name: "design"
+              value: "design"
+            - name: "fullstack"
+              value: "fullstack"
+            - name: "frontend"
+              value: "frontend"
+            - name: "backend"
+              value: "backend"
+            - name: "pm"
+              value: "pm"
+      - name: date
+        field:
+          element: "text"
+          label: "When"
+          help: "The date of the event"
+          value: CURRENT_DATETIME
+          type: "datetime"
+
+      - name: description
+        field:
+          name: "description"
+          field:
+            help: "Description of the Blog Article"
+            element: "textarea"
+      - name: comments
+        field:
+          name: comments
+          element: "checkbox"
+          label: "Enable Comments"
+          value: false
+      - name: image
