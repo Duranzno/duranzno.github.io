@@ -9,7 +9,7 @@ prose:
   #     - /_layouts
   #     - /_includes
   metadata:
-    _content/blog:
+    content/blog:
       - name: "title"
         field:
           element: "text"
