@@ -21,36 +21,28 @@ prose:
           alterable: true
           placeholder: "Choose Tags"
           options:
-            - name: "hackathon"
-              value: "hackathon"
-            - name: "design"
-              value: "design"
-            - name: "fullstack"
-              value: "fullstack"
-            - name: "frontend"
-              value: "frontend"
-            - name: "backend"
-              value: "backend"
-            - name: "pm"
-              value: "pm"
+            - "hackathon"
+            - "design"
+            - "fullstack"
+            - "frontend"
+            - "backend"
+            - "management"
       - name: date
         field:
           element: "text"
-          label: "When"
-          help: "The date of the event"
+          label: "Date"
+          help: "The date of the post"
           value: CURRENT_DATETIME
           type: "datetime"
-
       - name: description
         field:
           name: "description"
-          field:
-            help: "Description of the Blog Article"
-            element: "textarea"
+          element: "textarea"
+          value: ""
+          help: "Description of the Blog Article"
       - name: comments
         field:
           name: comments
           element: "checkbox"
           label: "Enable Comments"
           value: false
-      - name: image
