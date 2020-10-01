@@ -46,3 +46,65 @@ prose:
           element: "checkbox"
           label: "Enable Comments"
           value: false
+prose:
+  rooturl: "content"
+  #   siteurl: "http://prose.github.io/starter/"
+  #   relativeLinks: "http://prose.github.io/starter/links.jsonp"
+  media: "content/assets"
+  #   ignore:
+  #     - index.md
+  #     - _config.yml
+  #     - /_layouts
+  #     - /_includes
+  metadata:
+    content/blog:
+      - name: "title"
+        field:
+          element: "text"
+          value: "title"
+      - name: "categories"
+        field:
+          element: "multiselect"
+          label: "Select Categories"
+          alterable: true
+          placeholder: "Choose Tags"
+          options:
+            - "hackathon"
+            - "design"
+            - "fullstack"
+            - "frontend"
+            - "backend"
+            - "management"
+      - name: date
+        field:
+          element: "text"
+          label: "Date"
+          help: "The date of the post"
+          value: CURRENT_DATETIME
+          type: "datetime"
+      - name: description
+        field:
+          name: "description"
+          element: "textarea"
+          value: ""
+          help: "Description of the Blog Article"
+      - name: comments
+        field:
+          name: comments
+          element: "checkbox"
+          label: "Enable Comments"
+          value: false
+      - name: image-feature
+        field:
+          element: text
+          name: feature
+      - name: image-creditlink
+          field:
+            element: text
+            name: creditlink
+            value: ''
+      - name: image-credit
+          field:
+            element: text
+            name: credit
+            value: duranzno

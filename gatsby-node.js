@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
               }
+              html
             }
           }
         }
@@ -33,6 +34,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges
+  // .map(v => {
+  //   let html = v.node.html || undefined
+  //   const regex = /%7B%7Bsite.baseurl%7D%7D\//g
+  //   const local =
+  //     "https://raw.githubusercontent.com/Duranzno/personal-portfolio/master/content/"
+  //   html = html.replace(regex, local)
+  //   return { ...v, node: { node: v.node, html } }
+  // })
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
